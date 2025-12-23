@@ -22,12 +22,12 @@ class CommonTextField extends StatelessWidget {
     this.prefixText,
     this.paddingHorizontal = 16,
     this.paddingVertical = 14,
-    this.borderRadius = 10,
+    this.borderRadius = 6,
     this.inputFormatters,
-    this.fillColor = AppColors.white,
+    this.fillColor = AppColors.transparent,
     this.hintTextColor = AppColors.textFiledColor,
     this.labelTextColor = AppColors.textFiledColor,
-    this.textColor = AppColors.black,
+    this.textColor = AppColors.white,
     this.borderColor = AppColors.transparent,
     this.onSubmitted,
     this.onChanged,
@@ -117,9 +117,10 @@ class CommonTextField extends StatelessWidget {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(borderRadius.r),
       borderSide: BorderSide(
+        width: 1,
         color:
         borderColor == AppColors.transparent
-            ? Colors.grey.withOpacity(0.3)
+            ? Colors.white
             : borderColor,
       ),
     );

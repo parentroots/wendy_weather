@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_untitled/utils/extensions/extension.dart';
+import 'package:wendy_weather/component/background_widget/common_background.dart';
+import 'package:wendy_weather/utils/extensions/extension.dart';
 import '../../../../config/route/app_routes.dart';
 import 'package:get/get.dart';
 import '../../../../utils/constants/app_images.dart';
@@ -30,8 +31,14 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CommonImage(imageSrc: AppImages.noImage, size: 70).center,
-    );
+    return Scaffold(body: CommonBackground(child: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(AppImages.cloudy)
+
+          ]),
+    )));
   }
 }

@@ -12,6 +12,27 @@ class ForgetPasswordController extends GetxController {
   /// Loading for forget password
   bool isLoadingEmail = false;
 
+
+
+  bool newPasswordIsShow=false;
+  bool confirmNewPasswordIsShow=false;
+
+
+
+
+void newPasswordToggle(){
+  newPasswordIsShow=!newPasswordIsShow;
+  update();
+}
+
+  void confirmNewPasswordToggle(){
+    confirmNewPasswordIsShow=!confirmNewPasswordIsShow;
+    update();
+  }
+
+
+
+
   /// Loading for Verify OTP
 
   bool isLoadingVerify = false;

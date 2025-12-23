@@ -9,7 +9,8 @@ import '../../features/auth/sign up/presentation/screen/verify_user.dart';
 import '../../features/message/presentation/screen/chat_screen.dart';
 import '../../features/message/presentation/screen/message_screen.dart';
 import '../../features/notifications/presentation/screen/notifications_screen.dart';
-import '../../features/onboarding_screen/onboarding_screen.dart';
+import '../../features/onboarding_screen/screen/language_select_onboarding_screen.dart';
+import '../../features/onboarding_screen/screen/onboarding_screen.dart';
 import '../../features/profile/presentation/screen/edit_profile.dart';
 import '../../features/profile/presentation/screen/profile_screen.dart';
 import '../../features/setting/presentation/screen/privacy_policy_screen.dart';
@@ -37,6 +38,15 @@ class AppRoutes {
   static const String termsOfServices = "/terms_of_services_screen.dart";
   static const String setting = "/setting_screen.dart";
 
+
+
+
+  ///----------------------------------=======================onboarding Screen===============---------
+  static const String languageSelectOnboardingScreen = "/LanguageSelectOnboardingScreen";
+
+
+
+
   static List<GetPage> routes = [
     GetPage(name: splash, page: () => const SplashScreen()),
     GetPage(name: onboarding, page: () => const OnboardingScreen()),
@@ -55,5 +65,15 @@ class AppRoutes {
     GetPage(name: privacyPolicy, page: () => const PrivacyPolicyScreen()),
     GetPage(name: termsOfServices, page: () => const TermsOfServicesScreen()),
     GetPage(name: setting, page: () => const SettingScreen()),
+
+
+
+
+
+
+    ///-------------------------------=====================onboarding scree========---------------------
+    GetPage(name: languageSelectOnboardingScreen, page: () => const LanguageSelectOnboardingScreen()),
+
+
   ];
 }

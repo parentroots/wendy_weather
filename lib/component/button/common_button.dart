@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_untitled/utils/constants/app_colors.dart';
 
+
+import '../../utils/constants/app_colors.dart';
 import '../other_widgets/common_loader.dart';
 import '../text/common_text.dart';
 
@@ -25,7 +26,7 @@ class CommonButton extends StatefulWidget {
     this.titleColor = AppColors.white,
     this.buttonColor = AppColors.primaryColor,
     this.titleSize = 16,
-    this.buttonRadius = 10,
+    this.buttonRadius = 30,
     this.titleWeight = FontWeight.w700,
     this.buttonHeight = 48,
     this.borderWidth = 1,
@@ -85,6 +86,7 @@ class _CommonButtonState extends State<CommonButton>
 
   ButtonStyle _buttonStyle() {
     return ButtonStyle(
+
       backgroundColor: WidgetStateProperty.all(widget.buttonColor),
       padding: WidgetStateProperty.all(EdgeInsets.zero),
       shape: WidgetStateProperty.all(

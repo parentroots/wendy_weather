@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:new_untitled/app.dart';
+import 'package:wendy_weather/app.dart';
 
 
 void main() {

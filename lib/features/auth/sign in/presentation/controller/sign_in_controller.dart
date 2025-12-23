@@ -11,14 +11,21 @@ class SignInController extends GetxController {
   /// Sign in Button Loading variable
   bool isLoading = false;
 
+  bool isShowPassword=false;
+
+  void onTapPasswordToggle(){
+    isShowPassword=!isShowPassword;
+    update();
+  }
+
   /// Sign in form key , help for Validation
   final formKey = GlobalKey<FormState>();
 
   /// email and password Controller here
-  TextEditingController emailController = TextEditingController(
+  TextEditingController emailTEController = TextEditingController(
     text: kDebugMode ? 'developernaimul00@gmail.com' : '',
   );
-  TextEditingController passwordController = TextEditingController(
+  TextEditingController passwordTEController = TextEditingController(
     text: kDebugMode ? 'hello123' : "",
   );
 
@@ -33,8 +40,8 @@ class SignInController extends GetxController {
     update();
 
     Map<String, String> body = {
-      "email": emailController.text,
-      "password": passwordController.text,
+      "email": emailTEController.text,
+      "password": passwordTEController.text,
     };
 
     var response = await ApiService.post(
@@ -66,8 +73,8 @@ class SignInController extends GetxController {
       //   Get.offAllNamed(AppRoutes.patientsHome);
       // }
 
-      emailController.clear();
-      passwordController.clear();
+      emailTEController.clear();
+      passwordTEController.clear();
     } else {
       Get.snackbar(response.statusCode.toString(), response.message);
     }
