@@ -47,7 +47,6 @@ class OnboardingScreen extends StatelessWidget {
                   rightPadding: 10,
                   bottomPadding: 10,
                   topPadding: 10,
-                  height: 116.h,
                   width: 384,
                   child: Column(
                     children: [

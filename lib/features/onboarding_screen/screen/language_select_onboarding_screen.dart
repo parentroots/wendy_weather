@@ -99,103 +99,105 @@ class _LanguageSelectOnboardingScreenState
       topPadding: 20,
       bottomPadding: 20,
       borderRadius: 0,
-      height: 165.h,
+      height: 180.h,
       blurRadius: 0.10,
       width: double.maxFinite,
-      child: Column(
-        children: [
-          GlassContainer(
-            leftPadding: 10,
-            rightPadding: 10,
-            blurRadius: 0.10,
-            height: 54.h,
-            width: double.maxFinite,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Image.asset(AppImages.spanish),
-                    SizedBox(width: 6.w),
-                    CommonText(
-                      text: AppString.spanish,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.white,
-                    ),
-                  ],
-                ),
-
-                InkWell(
-                  onTap: () {
-                    selectedLanguageIndex = 0;
-                    setState(() {});
-                  },
-                  child: Container(
-                    height: 23.h,
-                    width: 23.w,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color:
-                          selectedLanguageIndex == 0
-                              ? Colors.white
-                              : Colors.transparent,
-
-                      border: Border.all(width: 5, color: Color(0xFFE6E6E6)),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            GlassContainer(
+              leftPadding: 10,
+              rightPadding: 10,
+              blurRadius: 0.10,
+              height: 60.h,
+              width: double.maxFinite,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Image.asset(AppImages.spanish),
+                      SizedBox(width: 6.w),
+                      CommonText(
+                        text: AppString.spanish,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.white,
+                      ),
+                    ],
+                  ),
+        
+                  InkWell(
+                    onTap: () {
+                      selectedLanguageIndex = 0;
+                      setState(() {});
+                    },
+                    child: Container(
+                      height: 23.h,
+                      width: 23.w,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color:
+                            selectedLanguageIndex == 0
+                                ? Colors.white
+                                : Colors.transparent,
+        
+                        border: Border.all(width: 5, color: Color(0xFFE6E6E6)),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-
-          SizedBox(height: 10),
-
-          GlassContainer(
-            leftPadding: 10,
-            rightPadding: 10,
-            blurRadius: 0.10,
-            height: 54.h,
-            width: double.maxFinite,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Image.asset(AppImages.english),
-                    SizedBox(width: 6.w),
-                    CommonText(
-                      text: AppString.english,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.white,
-                    ),
-                  ],
-                ),
-
-                InkWell(
-                  onTap: () {
-                    selectedLanguageIndex = 1;
-                    setState(() {});
-                  },
-                  child: Container(
-                    height: 23.h,
-                    width: 23.w,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color:
-                          selectedLanguageIndex == 1
-                              ? Colors.white
-                              : Colors.transparent,
-
-                      border: Border.all(width: 5, color: Color(0xFFE6E6E6)),
+        
+            SizedBox(height: 10),
+        
+            GlassContainer(
+              leftPadding: 10,
+              rightPadding: 10,
+              blurRadius: 0.10,
+              height: 60.h,
+              width: double.maxFinite,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Image.asset(AppImages.english),
+                      SizedBox(width: 6.w),
+                      CommonText(
+                        text: AppString.english,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.white,
+                      ),
+                    ],
+                  ),
+        
+                  InkWell(
+                    onTap: () {
+                      selectedLanguageIndex = 1;
+                      setState(() {});
+                    },
+                    child: Container(
+                      height: 23.h,
+                      width: 23.w,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color:
+                            selectedLanguageIndex == 1
+                                ? Colors.white
+                                : Colors.transparent,
+        
+                        border: Border.all(width: 5, color: Color(0xFFE6E6E6)),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

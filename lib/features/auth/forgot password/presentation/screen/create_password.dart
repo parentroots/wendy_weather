@@ -54,7 +54,6 @@ class CreatePassword extends StatelessWidget {
                         rightPadding: 10.w,
                         topPadding: 16.h,
                         bottomPadding: 16.h,
-                        height: 300.h,
                         width: double.maxFinite,
                         child: Column(
                           children: [
@@ -112,7 +111,7 @@ class CreatePassword extends StatelessWidget {
                                     backgroundColor: AppColors.transparent,
                                     child: GlassContainer(
                                       blurRadius: 0.20,
-                                      height: 360.h,
+                                      height: 400.h,
                                       width: double.maxFinite,
                                       child: Column(
                                         children: [

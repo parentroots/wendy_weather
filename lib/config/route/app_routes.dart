@@ -6,6 +6,8 @@ import '../../features/auth/forgot password/presentation/screen/verify_screen.da
 import '../../features/auth/sign in/presentation/screen/sign_in_screen.dart';
 import '../../features/auth/sign up/presentation/screen/sign_up_screen.dart';
 import '../../features/auth/sign up/presentation/screen/verify_user.dart';
+import '../../features/bottom_nav_screen/main_bottom_nav/main_bottom_nav_screen.dart';
+import '../../features/bottom_nav_screen/presentation/screen/seven_days_forecast_list_screen.dart';
 import '../../features/message/presentation/screen/chat_screen.dart';
 import '../../features/message/presentation/screen/message_screen.dart';
 import '../../features/notifications/presentation/screen/notifications_screen.dart';
@@ -43,6 +45,9 @@ class AppRoutes {
 
   ///----------------------------------=======================onboarding Screen===============---------
   static const String languageSelectOnboardingScreen = "/LanguageSelectOnboardingScreen";
+  static const String otpVerifyScreen = "/OtpVerifyScreen";
+  static const String mainBottomNavScreen = "/MainBottomNavScreen";
+  static const String sevenDaysForecastListScreen = "/SevenDaysForecastListScreen";
 
 
 
@@ -54,7 +59,7 @@ class AppRoutes {
     GetPage(name: verifyUser, page: () => const VerifyUser()),
     GetPage(name: signIn, page: () => SignInScreen()),
     GetPage(name: forgotPassword, page: () => ForgotPasswordScreen()),
-    GetPage(name: verifyEmail, page: () => const VerifyScreen()),
+    GetPage(name: verifyEmail, page: () => const OtpVerifyScreen()),
     GetPage(name: createPassword, page: () => CreatePassword()),
     GetPage(name: changePassword, page: () => ChangePasswordScreen()),
     GetPage(name: notifications, page: () => const NotificationScreen()),
@@ -73,6 +78,9 @@ class AppRoutes {
 
     ///-------------------------------=====================onboarding scree========---------------------
     GetPage(name: languageSelectOnboardingScreen, page: () => const LanguageSelectOnboardingScreen()),
+    GetPage(name: otpVerifyScreen, page: () => const OtpVerifyScreen()),
+    GetPage(name: mainBottomNavScreen, page: () => const MainBottomNavScreen()),
+    GetPage(name: sevenDaysForecastListScreen, page: () => const SevenDaysForecastListScreen()),
 
 
   ];

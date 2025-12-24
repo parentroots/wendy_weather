@@ -122,7 +122,10 @@ class SignInScreen extends StatelessWidget {
                                 GlassButton(
                                   text: AppString.login,
                                   onTap: () {
-                                    debugPrint('❤️❤️❤️😊😁😁😁😁😁');
+
+
+                                    Get.offAllNamed(AppRoutes.mainBottomNavScreen);
+
                                   },
                                 ),
                                         
@@ -166,8 +169,8 @@ class SignInScreen extends StatelessWidget {
                                         ),
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () {
-                                        
-                                            print("Sign up clicked");
+
+                                            Get.toNamed(AppRoutes.signUp);
                                           },
                                       ),
                                     ],

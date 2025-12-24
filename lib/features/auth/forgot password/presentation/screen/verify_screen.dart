@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:wendy_weather/component/glass_button/glass_button.dart';
+import 'package:wendy_weather/features/auth/forgot%20password/presentation/controller/otp_verify_screen_controller.dart';
+import '../../../../../component/app_bar/common_app_bar.dart';
+import '../../../../../component/background_widget/common_background.dart';
 import '../../../../../component/button/common_button.dart';
+import '../../../../../component/glass_container/glass_container.dart';
 import '../../../../../component/text/common_text.dart';
+import '../../../../../component/text_field/common_text_field.dart';
+import '../../../../../config/route/app_routes.dart';
+import '../../../../../utils/constants/app_images.dart';
 import '../controller/forget_password_controller.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../../../../utils/constants/app_string.dart';
 
-
-class VerifyScreen extends StatefulWidget {
-  const VerifyScreen({super.key});
+class OtpVerifyScreen extends StatefulWidget {
+  const OtpVerifyScreen({super.key});
 
   @override
-  State<VerifyScreen> createState() => _VerifyScreenState();
+  State<OtpVerifyScreen> createState() => _OtpVerifyScreenState();
 }
 
-class _VerifyScreenState extends State<VerifyScreen> {
+class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
   final formKey = GlobalKey<FormState>();
 
   /// init State here
@@ -28,107 +35,139 @@ class _VerifyScreenState extends State<VerifyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      /// App Bar Section
-      appBar: AppBar(
-        title: const CommonText(
-          text: AppString.forgotPassword,
-          fontWeight: FontWeight.w700,
-          fontSize: 24,
-        ),
-      ),
+    return GetBuilder<OtpVerifyScreenController>(
+      builder: (controller) {
+        return Scaffold(
+          body: CommonBackground(
+            child: Column(
+              children: [
+                CommonAppBar(title: 'Verify OTP'),
 
-      /// Body Section
-      body: GetBuilder<ForgetPasswordController>(
-        builder:
-            (controller) => SingleChildScrollView(
-              padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 20.w),
-              child: Form(
-                key: formKey,
-                child: Column(
-                  children: [
-                    /// instruction how to get OTP
-                    Center(
-                      child: CommonText(
-                        text:
-                            "${AppString.codeHasBeenSendTo} ${controller.emailController.text}",
-                        fontSize: 18,
-                        top: 100,
-                        bottom: 60,
-                      ),
-                    ),
-
-                    /// OTP Filed here
-                    Flexible(
-                      flex: 0,
-                      child: PinCodeTextField(
-                        controller: controller.otpController,
-                        validator: (value) {
-                          if (value != null && value.length == 6) {
-                            return null;
-                          } else {
-                            return AppString.otpIsInValid;
-                          }
-                        },
-                        autoDisposeControllers: false,
-                        cursorColor: AppColors.black,
-                        appContext: (context),
-                        autoFocus: true,
-                        pinTheme: PinTheme(
-                          shape: PinCodeFieldShape.box,
-                          borderRadius: BorderRadius.circular(8),
-                          fieldHeight: 60.h,
-                          fieldWidth: 60.w,
-                          activeFillColor: AppColors.transparent,
-                          selectedFillColor: AppColors.transparent,
-                          inactiveFillColor: AppColors.transparent,
-                          borderWidth: 0.5.w,
-                          selectedColor: AppColors.primaryColor,
-                          activeColor: AppColors.primaryColor,
-                          inactiveColor: AppColors.black,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(height: 51.h),
+                        SizedBox(
+                          height: 71.h,
+                          width: 71.w,
+                          child: Image.asset(AppImages.cloudy),
                         ),
-                        length: 6,
-                        keyboardType: TextInputType.number,
-                        autovalidateMode: AutovalidateMode.disabled,
-                        enableActiveFill: true,
-                      ),
-                    ),
 
-                    /// Resent OTP or show Timer
-                    GestureDetector(
-                      onTap:
-                          controller.time == '00:00'
-                              ? () {
-                                controller.startTimer();
-                                controller.forgotPasswordRepo();
-                              }
-                              : () {},
-                      child: CommonText(
-                        text:
-                            controller.time == '00:00'
-                                ? AppString.resendCode
-                                : "${AppString.resendCodeIn} ${controller.time} ${AppString.minute}",
-                        top: 60,
-                        bottom: 100,
-                        fontSize: 18,
-                      ),
-                    ),
+                        SizedBox(height: 53.h),
 
-                    ///  Submit Button here
-                    CommonButton(
-                      titleText: AppString.verify,
-                      isLoading: controller.isLoadingVerify,
-                      onTap: () {
-                        if (formKey.currentState!.validate()) {
-                          controller.verifyOtpRepo();
-                        }
-                      },
+                        GlassContainer(
+                          blurRadius: 0.18,
+                          leftPadding: 10.w,
+                          rightPadding: 10.w,
+                          topPadding: 16.h,
+                          bottomPadding: 16.h,
+                          width: double.maxFinite,
+                          child: Column(
+                            children: [
+                              CommonText(
+                                text: 'Verify OTP',
+                                fontSize: 24.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
+
+                              SizedBox(height: 4.h),
+                              CommonText(
+                                maxLines: 2,
+                                text:
+                                    AppString.weHaveSentSixDigitCodeToYourEmail,
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+
+
+                              SizedBox(height: 24.h,),
+
+
+                              PinCodeTextField(
+                                length: 6,
+                                appContext: context,
+                                controller: controller.otpTEController,
+
+                                obscureText: false,
+                                hintCharacter: '●',
+                                hintStyle: TextStyle(
+                                  color: Color(0xffFFFFFF),
+                                  fontSize: 24.sp,
+                                ),
+
+
+                                keyboardType: TextInputType.number,
+
+                                animationType: AnimationType.fade,
+                                animationDuration: const Duration(milliseconds: 300),
+
+                                enableActiveFill: true,
+                                backgroundColor: Colors.transparent,
+
+                                pinTheme: PinTheme(
+                                  shape: PinCodeFieldShape.box,
+                                  borderRadius: BorderRadius.circular(12),
+
+                                  fieldHeight: 60,
+                                  fieldWidth: 56.w,
+
+
+                                  // 🔹 Border Color
+                                  inactiveColor: AppColors.white,
+                                  selectedColor:AppColors.white,
+                                  activeColor: AppColors.white,
+
+
+                                  inactiveFillColor: AppColors.transparent,
+                                  selectedFillColor:  AppColors.transparent,
+                                  activeFillColor:  AppColors.transparent,
+
+                                  errorBorderColor: Colors.red,
+                                  disabledColor:  AppColors.white,
+                                ),
+
+                                textStyle: const TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white,
+                                ),
+
+                                onCompleted: (value) {
+                                  print("OTP Completed: $value");
+                                },
+
+                                onChanged: (value) {},
+                              ),
+
+                              SizedBox(height: 12.h,),
+
+                              CommonText(text: 'Resend',fontSize: 16.sp,fontWeight: FontWeight.w500,),
+
+                              SizedBox(height: 30.h,),
+
+
+
+
+                              GlassButton(text: 'Continue', onTap: (){
+
+                                Get.toNamed(AppRoutes.createPassword);
+
+                              })
+
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
+              ],
             ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

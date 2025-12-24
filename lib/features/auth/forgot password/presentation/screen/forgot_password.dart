@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wendy_weather/component/app_bar/common_app_bar.dart';
 import 'package:wendy_weather/component/background_widget/common_background.dart';
+import 'package:wendy_weather/component/glass_button/glass_button.dart';
 import 'package:wendy_weather/component/glass_container/glass_container.dart';
 import 'package:wendy_weather/config/route/app_routes.dart';
 import 'package:wendy_weather/utils/constants/app_images.dart';
@@ -50,7 +51,6 @@ class ForgotPasswordScreen extends StatelessWidget {
                             rightPadding: 10.w,
                             topPadding: 16.h,
                             bottomPadding: 16.h,
-                            height: 300.h,
                             width: double.maxFinite,
                             child: Column(
                               children: [
@@ -91,15 +91,15 @@ class ForgotPasswordScreen extends StatelessWidget {
                                 ),
                       
                                 SizedBox(height: 40.h),
-                      
-                                CommonButton(
-                                  onTap: (){
 
-                                    Get.toNamed(AppRoutes.createPassword);
-                                  },
-                                  buttonHeight: 48.h,
-                                  titleText: 'Verify',
-                                ),
+                                GlassButton(
+                                  height: 48.h,
+                                    text: 'Verify', onTap: (){
+                                  Get.toNamed(AppRoutes.otpVerifyScreen);
+
+                                })
+
+
                               ],
                             ),
                           ),

@@ -17,6 +17,28 @@ class SignUpController extends GetxController {
   /// Sign Up Form Key
   final signUpFormKey = GlobalKey<FormState>();
 
+
+
+  final TextEditingController fullNameTEController=TextEditingController();
+  final TextEditingController emailAddressTEController=TextEditingController();
+  final TextEditingController passwordTEController=TextEditingController();
+  final TextEditingController confirmPasswordTEController=TextEditingController();
+
+  bool passwordIsShow=false;
+  bool confirmPasswordIsShow=false;
+
+
+  void passwordToggle(){
+    passwordIsShow=!passwordIsShow;
+    update();
+  }
+
+  void confirmPasswordToggle(){
+    confirmPasswordIsShow=!confirmPasswordIsShow;
+    update();
+  }
+
+
   bool isPopUpOpen = false;
   bool isLoading = false;
   bool isLoadingVerify = false;

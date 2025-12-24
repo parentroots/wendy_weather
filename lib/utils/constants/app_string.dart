@@ -10,6 +10,7 @@ class AppString {
   static const String enterYouPassword = "Enter you password";
   static const String cancel = "Cancel";
   static const String done = "Done";
+  static const String enterYourName = "Enter Your Name";
   static const String deleteDetails =
       "All your changes will be deleted and you will no longer be able to access them.";
 
@@ -41,13 +42,14 @@ class AppString {
   static const String resendCodeIn = "Resend code in";
   static const String minute = "minute";
   static const String verify = "Verify";
-  static const String dontWorryEnterYourEmailAddressAndWellSend = "Don’t worry! Enter your email address and \n we’ll send you a verify OTP to reset it.";
+  static const String dontWorryEnterYourEmailAddressAndWellSend =
+      "Don’t worry! Enter your email address and \n we’ll send you a verify OTP to reset it.";
   static const String logIntoYourAccount = "Login to Your Account";
   static const String forgotThePassword = "Forgot the password";
   static const String signIn = "Sign in";
   static const String doNotHaveAccount = "Don’t have an account";
   static const String signUp = "Sign up";
-  static const String alreadyHaveAccount = "Already have an account";
+  static const String alreadyHaveAccount = "Already have an account ? ";
   static const String fullName = "Full Name";
   static const String createYourAccount = "Create Your Account";
   static const String otpVerify = "OTP Verify";
@@ -75,18 +77,26 @@ class AppString {
   static const String thisFieldIsRequired = "This field is required";
   static const String enterValidEmail = "Enter valid email";
   static const String selectLanguage = "Select language";
-  static const String weHaveSentSixDigitCodeToYourEmail = "we’ve sent a 6 digit code to your email \n please enter it below";
+  static const String weHaveSentSixDigitCodeToYourEmail =
+      "we’ve sent a 6 digit code to your email \n please enter it below";
   static const String spanish = "Spanish";
   static const String english = "English";
+  static const String otherStateWeather = "other state weather";
+  static const String todayRecommendation= "today's recommendation";
+  static const String hourlyForecast = "Hourly Forecast";
   static const String getStarted = "Get Started >>";
   static const String passwordMustBeeEightCharacters =
       "Password must be 8 characters & contain both alphabets and numerics";
   static const String thePasswordDoesNotMatch = "The password does not match";
   static const String startServer = "Please, start the Server";
   static const String unknownError = "Unknown Error";
+  static const String seeForecastForHomeLocation = "see forecast for home location";
   static const String wellComeWendyWeatherAi = "welcome Wendy\n Weather Ai";
-  static const String yourPersonalAiPowered = "Your personal AI-powered weather \n companion ☀️🌧️";
-  static const String wendyIsHereToBringYOurFriendlyAndAccurateWeatherInformation = "Wendy is here to bring your friendly \n and accurate weather information";
-  static const String wendyDeliversHyperLocalForecasts = "Wendy delivers hyper-local forecasts, real-time \n alerts, and smart suggestions—so you’re always\n one step ahead of the weather";
-
+  static const String yourPersonalAiPowered =
+      "Your personal AI-powered weather \n companion ☀️🌧️";
+  static const String
+  wendyIsHereToBringYOurFriendlyAndAccurateWeatherInformation =
+      "Wendy is here to bring your friendly \n and accurate weather information";
+  static const String wendyDeliversHyperLocalForecasts =
+      "Wendy delivers hyper-local forecasts, real-time \n alerts, and smart suggestions—so you’re always\n one step ahead of the weather";
 }
