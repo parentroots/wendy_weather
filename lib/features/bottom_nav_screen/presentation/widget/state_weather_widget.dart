@@ -72,7 +72,7 @@ class StateWeatherWidget extends StatelessWidget {
       separatorBuilder: (context, index) {
         return SizedBox(height: 10.h);
       },
-      itemCount: 4,
+      itemCount: 2,
     );
   }
 }

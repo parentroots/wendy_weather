@@ -19,6 +19,10 @@ class AppImages {
   static const String videoImage= "assets/images/video_image.png";
   static const String windImage= "assets/images/wind_icon.png";
   static const String placeImage= "assets/images/paceImage.png";
+  static const String sunRise= "assets/images/sunrise.png";
+  static const String fishingBanner= "assets/images/fising.png";
+  static const String locationImage= "assets/images/locationImage.png";
+  static const String radarImage= "assets/images/radarImage.png";
 
 
 

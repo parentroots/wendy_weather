@@ -34,7 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
             HomeAppBar(
               showBack: false,
               title: 'WENDY WEATHER AI',
-              onTapAction: () {},
+              onTapAction: () {
+
+                Get.toNamed(AppRoutes.setting);
+
+              },
             ),
 
             Expanded(
@@ -172,7 +176,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: 3,
                       separatorBuilder: (_, __) => SizedBox(height: 12.h),
-                      itemBuilder: (_, __) => WeeklyForeCastItem(),
+                      itemBuilder: (_, __) => WeeklyForeCastItem(
+                        onTap: (){
+                          Get.toNamed(AppRoutes.viewForeCastScreen);
+                        },
+                      ),
                     ),
 
 
@@ -220,7 +228,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                                 height:99.h,
                                 width: 110.w,
-                                child: Image.asset(AppImages.placeImage)),
+                                child: InkWell(
+                                  onTap: (){
+
+                                    Get.toNamed(AppRoutes.fishingScreen);
+                                  },
+
+                                    child: Image.asset(AppImages.placeImage))),
                             SizedBox(height: 10.h),
                             CommonText(
                               text: 'Hiking',

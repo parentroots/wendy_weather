@@ -6,63 +6,86 @@ import '../glass_container/glass_container.dart';
 class GlassAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool showBack;
+  final bool showAction;
   final VoidCallback? onBackTap;
   final VoidCallback? onActionTap;
-  final Widget? actionIcon;
+  final IconData actionIcon;
 
   const GlassAppBar({
-    Key? key,
+    super.key,
     required this.title,
     this.showBack = true,
+    this.showAction = true, // 👈 NEW
     this.onBackTap,
     this.onActionTap,
-    this.actionIcon,
-  }) : super(key: key);
+    this.actionIcon = Icons.menu,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GlassContainer(
-      topPadding: 15,
-      bottomPadding: 15,
-      blurRadius: 0.15,
-      borderRadius: 0,
-
       height: preferredSize.height,
       width: double.infinity,
+      blurRadius: 0.15,
+      borderRadius: 0,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Leading Back Icon
-            if (showBack)
-              GestureDetector(
-                onTap: onBackTap ?? () =>Get.back,
-                child: Icon(Icons.arrow_back_ios, color: Colors.white),
-              )
-            else
-              SizedBox(width: 24.w), // spacing
 
-            // Title Center
+            /// BACK
+            SizedBox(
+              width: 40.w,
+              child: showBack
+                  ? GestureDetector(
+                onTap: onBackTap ?? () => Get.back(),
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                  size: 20.sp,
+                ),
+              )
+                  : const SizedBox(),
+            ),
+
+            /// TITLE (ALWAYS CENTER)
             Expanded(
-              child: Center(
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 22.sp,
-                  ),
-                  textAlign: TextAlign.center,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
 
-            // Optional Action
-            // GestureDetector(
-            //   onTap: onActionTap,
-            //   child: actionIcon ?? SizedBox(width: 24.w),
-            // ),
+            /// ACTION (OPTIONAL)
+            SizedBox(
+              width: 40.w,
+              child: showAction
+                  ? GestureDetector(
+                onTap: onActionTap,
+                child: Container(
+                  height: 36.h,
+                  width: 36.w,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.white.withOpacity(0.6),
+                      width: 3,
+                    ),
+                  ),
+                  child: Icon(
+                    actionIcon,
+                    color: Colors.white,
+                    size: 18.sp,
+                  ),
+                ),
+              )
+                  : const SizedBox(),
+            ),
           ],
         ),
       ),
@@ -70,5 +93,5 @@ class GlassAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(80);
+  Size get preferredSize => const Size.fromHeight(100);
 }

@@ -7,6 +7,8 @@ import '../../features/auth/sign in/presentation/screen/sign_in_screen.dart';
 import '../../features/auth/sign up/presentation/screen/sign_up_screen.dart';
 import '../../features/auth/sign up/presentation/screen/verify_user.dart';
 import '../../features/bottom_nav_screen/main_bottom_nav/main_bottom_nav_screen.dart';
+import '../../features/bottom_nav_screen/presentation/home_screen/fishing_screen.dart';
+import '../../features/bottom_nav_screen/presentation/home_screen/view_forecast_screen.dart';
 import '../../features/bottom_nav_screen/presentation/screen/seven_days_forecast_list_screen.dart';
 import '../../features/message/presentation/screen/chat_screen.dart';
 import '../../features/message/presentation/screen/message_screen.dart';
@@ -15,6 +17,10 @@ import '../../features/onboarding_screen/screen/language_select_onboarding_scree
 import '../../features/onboarding_screen/screen/onboarding_screen.dart';
 import '../../features/profile/presentation/screen/edit_profile.dart';
 import '../../features/profile/presentation/screen/profile_screen.dart';
+import '../../features/setting/presentation/screen/change_language_screen.dart';
+import '../../features/setting/presentation/screen/help_and_support_screen.dart';
+import '../../features/setting/presentation/screen/manage_location_screen.dart';
+import '../../features/setting/presentation/screen/my_package_screen.dart';
 import '../../features/setting/presentation/screen/privacy_policy_screen.dart';
 import '../../features/setting/presentation/screen/setting_screen.dart';
 import '../../features/setting/presentation/screen/terms_of_services_screen.dart';
@@ -48,6 +54,12 @@ class AppRoutes {
   static const String otpVerifyScreen = "/OtpVerifyScreen";
   static const String mainBottomNavScreen = "/MainBottomNavScreen";
   static const String sevenDaysForecastListScreen = "/SevenDaysForecastListScreen";
+  static const String viewForeCastScreen = "/ViewForeCastScreen";
+  static const String fishingScreen = "/FishingScreen";
+  static const String myPackageScreen = "/MyPackageScreen";
+  static const String manageLocationScreen = "/ManageLocationScreen";
+  static const String changeLanguageScreen = "/ChangeLanguageScreen";
+  static const String helpAndSupportScreen = "/HelpAndSupportScreen";
 
 
 
@@ -80,6 +92,12 @@ class AppRoutes {
     GetPage(name: languageSelectOnboardingScreen, page: () => const LanguageSelectOnboardingScreen()),
     GetPage(name: otpVerifyScreen, page: () => const OtpVerifyScreen()),
     GetPage(name: mainBottomNavScreen, page: () => const MainBottomNavScreen()),
+    GetPage(name: viewForeCastScreen, page: () => const ViewForeCastScreen()),
+    GetPage(name: fishingScreen, page: () => const FishingScreen()),
+    GetPage(name: manageLocationScreen, page: () => const ManageLocationScreen()),
+    GetPage(name: myPackageScreen, page: () => const MyPackageScreen()),
+    GetPage(name: changeLanguageScreen, page: () => const ChangeLanguageScreen()),
+    GetPage(name: helpAndSupportScreen, page: () => const HelpAndSupportScreen()),
     GetPage(name: sevenDaysForecastListScreen, page: () => const SevenDaysForecastListScreen()),
 
 

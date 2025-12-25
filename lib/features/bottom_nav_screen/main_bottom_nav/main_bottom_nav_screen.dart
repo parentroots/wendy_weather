@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wendy_weather/component/glass_container/glass_container.dart';
-import 'package:wendy_weather/features/bottom_nav_screen/presentation/screen/alarm_screen.dart';
-import 'package:wendy_weather/features/bottom_nav_screen/presentation/screen/home_screen.dart';
+import 'package:wendy_weather/features/bottom_nav_screen/presentation/screen/alarm/screen/alarm_screen.dart' hide AlarmGlassContainer;
+import 'package:wendy_weather/features/bottom_nav_screen/presentation/home_screen/home_screen.dart';
 import 'package:wendy_weather/features/bottom_nav_screen/presentation/screen/radar_screen.dart';
 import 'package:wendy_weather/features/bottom_nav_screen/presentation/screen/wendy_screen.dart';
 

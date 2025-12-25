@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:wendy_weather/component/app_bar/glass_app_bar.dart';
+import 'package:wendy_weather/component/background_widget/common_background.dart';
+import 'package:wendy_weather/component/glass_container/glass_container.dart';
 import '../../../../../../../config/route/app_routes.dart';
 import '../../../../../../../utils/extensions/extension.dart';
 import '../../../../../component/button/common_button.dart';
+import '../../../../../component/glass_button/glass_button.dart';
 import '../../../../../component/text/common_text.dart';
 import '../../../../../component/text_field/common_text_field.dart';
 import '../controller/change_password_controller.dart';
@@ -17,96 +21,111 @@ class ChangePasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const CommonText(
-          text: AppString.changePassword,
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-      body: GetBuilder<ChangePasswordController>(
-        builder: (controller) {
-          return SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: Form(
-              key: controller.formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  70.height,
+   return GetBuilder<ChangePasswordController>(builder: (controller){
+     return Scaffold(
 
-                  /// current Password section
-                  const CommonText(text: AppString.currentPassword, bottom: 8),
-                  CommonTextField(
-                    controller: controller.currentPasswordController,
-                    hintText: AppString.currentPassword,
-                    validator: OtherHelper.passwordValidator,
-                    isPassword: true,
-                    prefixIcon: Icon(Icons.lock, size: 20.sp),
-                  ),
 
-                  /// New Password section
-                  const CommonText(
-                    text: AppString.newPassword,
-                    bottom: 8,
-                    top: 16,
-                  ),
-                  CommonTextField(
-                    controller: controller.newPasswordController,
-                    hintText: AppString.newPassword,
-                    validator: OtherHelper.passwordValidator,
-                    isPassword: true,
-                    prefixIcon: Icon(Icons.lock, size: 20.sp),
-                  ),
+       body: CommonBackground(child: Column(
+         children: [
 
-                  /// confirm Password section
-                  const CommonText(
-                    text: AppString.confirmPassword,
-                    bottom: 8,
-                    top: 16,
-                  ),
-                  CommonTextField(
-                    controller: controller.confirmPasswordController,
-                    hintText: AppString.confirmPassword,
-                    validator:
-                        (value) => OtherHelper.confirmPasswordValidator(
-                          value,
-                          controller.newPasswordController,
-                        ),
-                    isPassword: true,
-                    prefixIcon: Icon(Icons.lock, size: 20.sp),
-                  ),
+         GlassAppBar(title: 'Change Password'),
 
-                  /// forget Password button
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: GestureDetector(
-                      onTap: () => Get.toNamed(AppRoutes.forgotPassword),
-                      child: CommonText(
-                        text: AppString.forgotPassword,
-                        color: AppColors.primaryColor,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18.sp,
-                        top: 16.h,
-                        bottom: 20.h,
-                      ),
-                    ),
-                  ),
 
-                  /// submit Button
-                  CommonButton(
-                    titleText: AppString.confirm,
-                    isLoading: controller.isLoading,
-                    onTap: controller.changePasswordRepo,
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
+         SizedBox(height: 70.h,),
+
+         Padding(
+           padding:  EdgeInsets.symmetric(horizontal: 20.w),
+           child: GlassContainer(
+
+             width: double.maxFinite,
+             child: Column(
+             crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+
+                 SizedBox(height: 20.h,),
+                 
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     Column(
+                       children: [
+                         CommonText(text: 'Change Password',fontSize: 24.sp,),
+
+                         SizedBox(height: 4.h,),
+
+                         CommonText(
+                           maxLines: 3,
+                           textAlign: TextAlign.center,
+                           text: 'Your new password must be different \n from previous ones',fontSize: 16.sp,),
+                       ],
+                     ),
+                   ],
+                 ),
+
+                  SizedBox(height: 24.h,),
+
+                  CommonText(text: AppString.currentPassword, bottom: 8),
+                 CommonTextField(
+                   controller: controller.currentPasswordController,
+                   hintText: AppString.enterOldPassword,
+                   validator: OtherHelper.passwordValidator,
+                   isPassword: true,
+                 ),
+
+                 /// New Password section
+                 const CommonText(
+                   text: AppString.newPassword,
+                   bottom: 8,
+                   top: 16,
+                 ),
+                 CommonTextField(
+                   controller: controller.newPasswordController,
+                   hintText: AppString.enterNewPassword,
+                   validator: OtherHelper.passwordValidator,
+                   isPassword: true,
+
+                 ),
+
+                 /// confirm Password section
+                 const CommonText(
+                   text: AppString.confirmNewPassword,
+                   bottom: 8,
+                   top: 16,
+                 ),
+                 CommonTextField(
+                   controller: controller.confirmPasswordController,
+                   hintText: AppString.confirmNewPassword,
+                   validator:
+                       (value) => OtherHelper.confirmPasswordValidator(
+                     value,
+                     controller.newPasswordController,
+                   ),
+                   isPassword: true,
+                 ),
+
+
+
+                 SizedBox(height: 30.h,),
+
+                 GlassButton(
+                   text: 'Update',
+                   onTap: (){
+                     debugPrint('❤️❤️❤️❤️❤️❤️❤️❤️');
+                   }//controller.changePasswordRepo,
+                 ),
+
+
+
+
+               ],
+             ),
+           ),
+         )
+
+
+       ],)),
+
+     );
+   });
   }
 }

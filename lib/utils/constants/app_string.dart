@@ -20,9 +20,10 @@ class AppString {
   static const String test = "Test";
   static const String emailAddress = "Email address ";
   static const String changePassword = "Change Password";
-  static const String currentPassword = "Current Password";
+  static const String currentPassword = "Old password";
+  static const String enterOldPassword = "Enter Old password";
   static const String enterYourEmailAddress = "Enter your email address";
-  static const String newPassword = "New Password";
+  static const String newPassword = "Enter New Password";
   static const String confirmPassword = "Confirm Password";
   static const String forgotPassword = "Forgot Password?";
   static const String forgotPassword2 = "Forgot Password";
@@ -81,10 +82,21 @@ class AppString {
       "we’ve sent a 6 digit code to your email \n please enter it below";
   static const String spanish = "Spanish";
   static const String english = "English";
+  static const String fishingWeatherCastWithConfidence = "Fishing Weather – Cast with Confidence";
   static const String otherStateWeather = "other state weather";
-  static const String todayRecommendation= "today's recommendation";
+  static const String todayRecommendation= "Today's Recommendation";
   static const String hourlyForecast = "Hourly Forecast";
   static const String getStarted = "Get Started >>";
+  static const String fishingDescription =
+      "Whether you're heading to the riverbank, lake, or\n"
+      "open sea, Wendy helps you plan the perfect fishing \n"
+      "trip. We track wind speed, cloud cover, temperature,\n"
+      " and barometric pressure—so you know when the fish\n"
+      " are most active and the conditions are just right.\n"
+      "Expect calm winds, stable skies, and ideal light for \n"
+      " visibility. Wendy also alerts you to sudden changes\n"
+      " like storms or high tides, keeping your gear—and your\n"
+      " day—safe and productive.";
   static const String passwordMustBeeEightCharacters =
       "Password must be 8 characters & contain both alphabets and numerics";
   static const String thePasswordDoesNotMatch = "The password does not match";
@@ -99,4 +111,9 @@ class AppString {
       "Wendy is here to bring your friendly \n and accurate weather information";
   static const String wendyDeliversHyperLocalForecasts =
       "Wendy delivers hyper-local forecasts, real-time \n alerts, and smart suggestions—so you’re always\n one step ahead of the weather";
+
+
+
+
+
 }

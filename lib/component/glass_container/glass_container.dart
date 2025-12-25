@@ -13,6 +13,7 @@ class GlassContainer extends StatelessWidget {
   final double topPadding;
   final double bottomPadding;
   final double containerBorderRadius;
+  final VoidCallback? onTap;
 
   const GlassContainer({
     super.key,
@@ -24,7 +25,7 @@ class GlassContainer extends StatelessWidget {
     this.leftPadding = 10,
     this.rightPadding = 10,
     this.topPadding = 10,
-    this.bottomPadding = 10,  this.containerBorderRadius=6,
+    this.bottomPadding = 10,  this.containerBorderRadius=6, this.onTap,
   });
 
   @override
@@ -33,24 +34,27 @@ class GlassContainer extends StatelessWidget {
       borderRadius: BorderRadius.circular(6),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-        child: Container(
-          padding: EdgeInsets.only(
-            left: leftPadding,
-            right: rightPadding,
-            bottom: bottomPadding,
-            top: topPadding,
-          ),
-          height: height,
-          width: width,
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: blurRadius),
-            borderRadius: BorderRadius.circular(containerBorderRadius),
-            border: Border.all(
-              width: 1.5,
-              color: Colors.white.withValues(alpha: borderRadius),
+        child: InkWell(
+          onTap: onTap,
+          child: Container(
+            padding: EdgeInsets.only(
+              left: leftPadding,
+              right: rightPadding,
+              bottom: bottomPadding,
+              top: topPadding,
             ),
+            height: height,
+            width: width,
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: blurRadius),
+              borderRadius: BorderRadius.circular(containerBorderRadius),
+              border: Border.all(
+                width: 1.5,
+                color: Colors.white.withValues(alpha: borderRadius),
+              ),
+            ),
+            child: Center(child: child),
           ),
-          child: Center(child: child),
         ),
       ),
     );
