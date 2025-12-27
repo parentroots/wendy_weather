@@ -17,14 +17,15 @@ import '../../features/onboarding_screen/screen/language_select_onboarding_scree
 import '../../features/onboarding_screen/screen/onboarding_screen.dart';
 import '../../features/profile/presentation/screen/edit_profile.dart';
 import '../../features/profile/presentation/screen/profile_screen.dart';
+import '../../features/setting/presentation/screen/about_us_screen.dart';
 import '../../features/setting/presentation/screen/change_language_screen.dart';
 import '../../features/setting/presentation/screen/help_and_support_screen.dart';
 import '../../features/setting/presentation/screen/manage_location_screen.dart';
 import '../../features/setting/presentation/screen/my_package_screen.dart';
 import '../../features/setting/presentation/screen/privacy_policy_screen.dart';
 import '../../features/setting/presentation/screen/setting_screen.dart';
-import '../../features/setting/presentation/screen/terms_of_services_screen.dart';
 import '../../features/splash/splash_screen.dart';
+import '../../features/subsription/subscription_screen.dart';
 
 class AppRoutes {
   static const String test = "/test_screen.dart";
@@ -60,6 +61,9 @@ class AppRoutes {
   static const String manageLocationScreen = "/ManageLocationScreen";
   static const String changeLanguageScreen = "/ChangeLanguageScreen";
   static const String helpAndSupportScreen = "/HelpAndSupportScreen";
+  static const String aboutUsScreen = "/AboutUsScreen";
+  static const String privacyPolicyScreen= "/PrivacyPolicyScreen";
+  static const String subscriptionScreen= "/SubscriptionScreen";
 
 
 
@@ -79,9 +83,9 @@ class AppRoutes {
     GetPage(name: message, page: () => const MessageScreen()),
     GetPage(name: profile, page: () => const ProfileScreen()),
     GetPage(name: editProfile, page: () => EditProfile()),
-    GetPage(name: privacyPolicy, page: () => const PrivacyPolicyScreen()),
-    GetPage(name: termsOfServices, page: () => const TermsOfServicesScreen()),
+    GetPage(name: privacyPolicy, page: () =>  PrivacyPolicyScreen()),
     GetPage(name: setting, page: () => const SettingScreen()),
+    GetPage(name:aboutUsScreen, page: () => const AboutUsScreen()),
 
 
 
@@ -89,6 +93,7 @@ class AppRoutes {
 
 
     ///-------------------------------=====================onboarding scree========---------------------
+
     GetPage(name: languageSelectOnboardingScreen, page: () => const LanguageSelectOnboardingScreen()),
     GetPage(name: otpVerifyScreen, page: () => const OtpVerifyScreen()),
     GetPage(name: mainBottomNavScreen, page: () => const MainBottomNavScreen()),
@@ -98,6 +103,8 @@ class AppRoutes {
     GetPage(name: myPackageScreen, page: () => const MyPackageScreen()),
     GetPage(name: changeLanguageScreen, page: () => const ChangeLanguageScreen()),
     GetPage(name: helpAndSupportScreen, page: () => const HelpAndSupportScreen()),
+    GetPage(name: privacyPolicyScreen, page: () => PrivacyPolicyScreen()),
+    GetPage(name: subscriptionScreen, page: () => SubscriptionScreen()),
     GetPage(name: sevenDaysForecastListScreen, page: () => const SevenDaysForecastListScreen()),
 
 

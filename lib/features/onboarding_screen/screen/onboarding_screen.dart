@@ -27,7 +27,10 @@ class OnboardingScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(AppImages.cloudy, height: 71.h, width: 71.w),
+                SizedBox(
+                    height: 139.h,
+                    width: 150.w,
+                    child: Image.asset(AppImages.appLogo)),
 
                 SizedBox(height: 12.h),
 

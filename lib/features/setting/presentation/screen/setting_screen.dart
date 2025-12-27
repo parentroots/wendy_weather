@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wendy_weather/component/background_widget/common_background.dart';
+import 'package:wendy_weather/component/glass_button/glass_button.dart';
 import 'package:wendy_weather/utils/constants/app_icons.dart';
 import '../../../../../../config/route/app_routes.dart';
 import '../../../../../../utils/extensions/extension.dart';
@@ -40,7 +41,9 @@ class SettingScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
 
-                      SvgPicture.asset(AppIcons.cancel),
+                      InkWell(
+                        onTap: ()=>Get.toNamed(AppRoutes.mainBottomNavScreen),
+                          child: SvgPicture.asset(AppIcons.cancel)),
                     ],
                   ),
 
@@ -124,7 +127,10 @@ class SettingScreen extends StatelessWidget {
                   SizedBox(height: 12.h),
 
                   SettingItem(
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(AppRoutes.aboutUsScreen);
+
+                    },
                     title: 'About US',
                     leadingIcon: AppIcons.aboutUs,
                   ),
@@ -132,7 +138,10 @@ class SettingScreen extends StatelessWidget {
                   SizedBox(height: 12.h),
 
                   SettingItem(
-                    onTap: () {},
+                    onTap: () {
+
+                      Get.toNamed(AppRoutes.privacyPolicyScreen);
+                    },
                     title: 'Privacy Policy',
                     leadingIcon: AppIcons.privacy,
                   ),
@@ -140,7 +149,12 @@ class SettingScreen extends StatelessWidget {
                   SizedBox(height: 12.h),
 
                   SettingItem(
-                    onTap: () {},
+                    onTap: () {
+
+                      logOutDialog();
+
+
+                    },
                     title: 'Log out',
                     leadingIcon: AppIcons.logout,
                   ),
@@ -154,4 +168,90 @@ class SettingScreen extends StatelessWidget {
       ),
     );
   }
+
+
+
+  void logOutDialog() {
+    Get.dialog(
+      barrierDismissible: false,
+      Dialog(
+        backgroundColor: Colors.transparent,
+        child: WillPopScope(
+          onWillPop: () async => false,
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+
+                /// Title
+                Text(
+                  "Log out",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                const SizedBox(height: 12),
+
+                /// Message
+                Text(
+                  "Are you sure you want to logout?",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14),
+                ),
+
+                const SizedBox(height: 20),
+
+                Divider(
+                  color: Colors.grey.shade300,
+                  thickness: 1,
+                ),
+
+                const SizedBox(height: 10),
+
+                /// Buttons
+                Row(
+                  children: [
+
+                    /// Cancel Button
+                    Expanded(
+                      child: TextButton(
+                        onPressed: () {
+                          Get.back(); // close dialog
+                        },
+                        child: Text(
+                          "Cancel",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    /// Logout Button
+                    ///
+                    ///
+
+
+
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+
 }

@@ -7,6 +7,7 @@ import 'package:wendy_weather/component/app_bar/common_app_bar.dart';
 import 'package:wendy_weather/component/background_widget/common_background.dart';
 import 'package:wendy_weather/component/glass_button/glass_button.dart';
 import 'package:wendy_weather/component/glass_container/glass_container.dart';
+import 'package:wendy_weather/component/image/common_image.dart';
 import 'package:wendy_weather/component/text/common_text.dart';
 import 'package:wendy_weather/config/route/app_routes.dart';
 import 'package:wendy_weather/utils/constants/app_colors.dart';
@@ -35,55 +36,58 @@ class _LanguageSelectOnboardingScreenState
 
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 27.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 31.w),
-                    child: CommonText(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      maxLines: 2,
-                      textAlign: TextAlign.center,
-                      text:
-                          AppString
-                              .wendyIsHereToBringYOurFriendlyAndAccurateWeatherInformation,
-                    ),
-                  ),
-
-                  SizedBox(height: 44.h),
-
-                  Container(
-                    height: 217.h,
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(AppImages.videoImage),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: 27.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 31.w),
+                      child: CommonText(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                        text:
+                            AppString
+                                .wendyIsHereToBringYOurFriendlyAndAccurateWeatherInformation,
                       ),
                     ),
-                  ),
+                
+                    SizedBox(height: 44.h),
+                
+                    Container(
+                      height: 217.h,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
 
-                  SizedBox(height: 24.h),
-                  CommonText(
-                    text: AppString.selectLanguage,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
-
-                  SizedBox(height: 19.h),
-
-                  buildLanguageSection(),
-
-                  SizedBox(height: 40.h,),
-                  
-                  GlassButton(text: AppString.continues, onTap: (){
-
-                    Get.toNamed(AppRoutes.signIn);
-
-                  })
-
-
-                ],
+                      ),
+                      child: CommonImage(
+                        fill: BoxFit.fill,
+                          imageSrc: AppImages.videoImage),
+                    ),
+                
+                    SizedBox(height: 24.h),
+                    CommonText(
+                      text: AppString.selectLanguage,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                
+                    SizedBox(height: 19.h),
+                
+                    buildLanguageSection(),
+                
+                    SizedBox(height: 40.h,),
+                    
+                    GlassButton(text: AppString.continues, onTap: (){
+                
+                      Get.toNamed(AppRoutes.signIn);
+                
+                    })
+                
+                
+                  ],
+                ),
               ),
             ),
           ],
@@ -99,7 +103,7 @@ class _LanguageSelectOnboardingScreenState
       topPadding: 20,
       bottomPadding: 20,
       borderRadius: 0,
-      height: 180.h,
+      height: 200.h,
       blurRadius: 0.10,
       width: double.maxFinite,
       child: SingleChildScrollView(

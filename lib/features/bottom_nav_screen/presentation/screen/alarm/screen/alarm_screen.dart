@@ -34,14 +34,13 @@ class _AlarmScreenState extends State<AlarmScreen> {
               onBackTap: () => Get.back(),
               onActionTap: () {
 
-                showAlarmEditDialog();
+                showAddAlarmDialog();
               },
               actionIcon: Icons.add,
             ),
 
 
 
-            // Expanded দিয়ে ListView constrain করা
 
             Expanded(
               child: Padding(
@@ -52,7 +51,7 @@ class _AlarmScreenState extends State<AlarmScreen> {
                   itemBuilder: (context, index) {
                     return GlassContainer(
                       onTap:(){
-                        showAddAlarmDialog();
+                        showAlarmEditDialog();
                       },
                       blurRadius: 0.30,
                       width: double.maxFinite,

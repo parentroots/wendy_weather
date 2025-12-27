@@ -1,25 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../utils/constants/app_colors.dart';
 
 class CommonText extends StatelessWidget {
-  const CommonText(
-      {super.key,
-      this.maxLines = 1,
-      this.textAlign = TextAlign.center,
-      this.left = 0,
-      this.right = 0,
-      this.top = 0,
-      this.bottom = 0,
-      this.fontSize = 14,
-      this.fontWeight = FontWeight.w500,
-      this.color = AppColors.white,
-      required this.text,
-      this.style,
-      this.overflow = TextOverflow.ellipsis});
+  const CommonText({
+    super.key,
+    this.maxLines = 1,
+    this.textAlign = TextAlign.center,
+    this.left = 0,
+    this.right = 0,
+    this.top = 0,
+    this.bottom = 0,
+    this.fontSize = 14,
+    this.fontWeight = FontWeight.w500,
+    this.color = AppColors.white,
+    required this.text,
+    this.style,
+    this.overflow = TextOverflow.ellipsis,
+  });
 
   final double left;
   final double right;
@@ -34,20 +33,24 @@ class CommonText extends StatelessWidget {
   final TextOverflow overflow;
   final TextStyle? style;
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          left: left.w, right: right.w, top: top.h, bottom: bottom.h),
+        left: left,
+        right: right,
+        top: top,
+        bottom: bottom,
+      ),
       child: Text(
         textAlign: textAlign,
         text,
         maxLines: maxLines,
         overflow: overflow,
-        style: style ??
-            GoogleFonts.roboto(
-              fontSize: fontSize.sp,
+        style:
+            style ??
+            GoogleFonts.poppins(
+              fontSize: fontSize,
               fontWeight: fontWeight,
               color: color,
             ),

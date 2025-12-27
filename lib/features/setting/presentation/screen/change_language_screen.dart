@@ -28,6 +28,7 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
         children: [
 
           GlassAppBar(
+            showAction: false,
             showBack: true,
               title: 'Language'),
 

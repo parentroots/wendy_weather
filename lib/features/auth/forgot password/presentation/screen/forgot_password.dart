@@ -38,10 +38,9 @@ class ForgotPasswordScreen extends StatelessWidget {
                         children: [
                           SizedBox(height: 51.h),
                           SizedBox(
-                            height: 71.h,
-                            width: 71.w,
-                            child: Image.asset(AppImages.cloudy),
-                          ),
+                              height: 139.h,
+                              width: 150.w,
+                              child: Image.asset(AppImages.appLogo)),
                       
                           SizedBox(height: 53.h),
                       

@@ -14,7 +14,6 @@ class WeeklyForeCastItem extends StatelessWidget {
       onTap: onTap,
       child: GlassContainer(
         blurRadius: 0.20,
-        height: 80.h,
         width: double.maxFinite,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,16 +25,22 @@ class WeeklyForeCastItem extends StatelessWidget {
                 ///===============================================
 
                 Column(
+
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CommonText(text: 'Monday',fontSize: 16.sp,fontWeight: FontWeight.w500,),
+                    CommonText(
+                      text: 'Monday',fontSize: 16,fontWeight: FontWeight.w500,textAlign: TextAlign.start,),
                     SizedBox(height: 6.h,),
-                    CommonText(text: 'December 24',fontSize: 12.sp,fontWeight: FontWeight.w400,),
+                    CommonText(
+
+                      text: 'December 24',fontSize: 12.sp,fontWeight: FontWeight.w400,),
                   ],
                 ),
 
 
                 ///===============================================
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
@@ -44,7 +49,7 @@ class WeeklyForeCastItem extends StatelessWidget {
                           width: 20.h,
                           child: Image.asset(AppImages.sun),
                         ),
-                        CommonText(text: '76°F'),
+                        CommonText(text: '76°F',fontSize: 16.sp,fontWeight: FontWeight.w500,),
                       ],
                     ),
 
@@ -57,6 +62,7 @@ class WeeklyForeCastItem extends StatelessWidget {
 
 
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Row(
                       children: [

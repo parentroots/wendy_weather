@@ -36,6 +36,7 @@ class AppString {
   static const String continues = "Continue >>";
   static const String weatherAi = "weather ai";
   static const String email = "Email";
+  static const String aboutUs = "About Us";
   static const String login = "Log in";
   static const String codeHasBeenSendTo = "Code has been send to";
   static const String otpIsInValid = "Otp is inValid";
@@ -75,15 +76,37 @@ class AppString {
   static const String noInternetConnection = "No internet connection";
   static const String badResponseRequest = "Bad Response Request";
   static const String requestTimeOut = "Request Time Out";
+  static const String locationData = ".Location Data";
   static const String thisFieldIsRequired = "This field is required";
   static const String enterValidEmail = "Enter valid email";
+  static const String personalInformation = ".Personal Information";
+  static const String userPreferences= ".User Preferences";
+  static const String toProvideAccurateWeather = "To provide accurate weather forecasts, we may \n request access to your device’s location.";
+  static const String informationWeCollect = "1. Information We Collect";
+  static const String atWendyWeatherAiYOurPrivacyIsImportant = "At Wendy Weather AI, your privacy is important \n to us. This Privacy Policy explains how we collect,\n  use, and protect your information when you use our \n app. By using Wendy Weather AI, you agree to the \n  terms of this policy.";
+  static const String werePassionateAboutCombingTechnologyDesign = "We’re passionate about combining technology, design, and storytelling to make weather updates engaging and useful. With features like live radar, severe weather alerts, multilingual support, and personalized wake-up forecasts, Wendy ensures you’re always one step ahead of the weather.";
+  static const String ourAppsGoesBeyondTraditionalWeatherReports = "Our app goes beyond traditional weather reports.\n Powered by trusted weather APIs and advanced AI,\n  Wendy delivers accurate, real-time forecasts,\n hourly updates, and 7-day outlooks. But accuracy\n isn’t everything — Wendy makes the experience \n lively with short-loop animations, natural voice \n commentary, and personalized recommendations\n  tailored to your lifestyle and favorite activities,\n  whether it’s hiking, fishing, or planning a family \n outing";
+  static const String aboutUsContent = "EAt Wendy Weather AI, we believe that checking \n the weather should be more than just numbers on \n a screen — it should be personal, interactive, and \n even a little fun. That’s why we created Wendy,\n  your animated, AI-powered weather companion \n who brings forecasts to life with voice, personality,\n  and engaging visuals.";
+
+
   static const String selectLanguage = "Select language";
+  static const String weArePassionateAboutCombing = "We’re passionate about combining technology, \n design, and storytelling to make weather updates\n  engaging and useful. With features like live radar,\n severe weather alerts, multilingual support, and \n personalized wake-up forecasts, Wendy ensures \n you’re always one step ahead of the weather.";
+  static const String ourAppGoesBeyond =
+      'Our app goes beyond traditional weather reports.\n'
+      'Powered by trusted weather APIs and advanced AI, \n Wendy delivers'
+      'accurate, real-time forecasts,\n hourly updates, and 7-day outlooks.'
+      'But accuracy\n isn’t everything — Wendy makes the experience \n lively'
+      'with short-loop animations, natural voice \n commentary, and personalized'
+      'recommendations \n tailored to your lifestyle and favorite activities,\n'
+      'whether it’s hiking, fishing, or planning a family \n outing.';
+
+  static const String atWendyWeatherAiWeBelive = "At Wendy Weather AI, we believe that checking \nthe weather should be more than just numbers on \n a screen — it should be personal, interactive, and \n even a little fun. That’s why we created Wendy,\n  your animated, AI-powered weather companion \n who brings forecasts to life with voice, personality, \n and engaging visuals.";
   static const String weHaveSentSixDigitCodeToYourEmail =
       "we’ve sent a 6 digit code to your email \n please enter it below";
   static const String spanish = "Spanish";
   static const String english = "English";
   static const String fishingWeatherCastWithConfidence = "Fishing Weather – Cast with Confidence";
-  static const String otherStateWeather = "other state weather";
+  static const String otherStateWeather = "Other state weather";
   static const String todayRecommendation= "Today's Recommendation";
   static const String hourlyForecast = "Hourly Forecast";
   static const String getStarted = "Get Started >>";

@@ -5,10 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wendy_weather/component/app_bar/glass_app_bar.dart';
 import 'package:wendy_weather/component/background_widget/common_background.dart';
 import 'package:wendy_weather/component/glass_button/glass_button.dart';
-import 'package:wendy_weather/component/glass_container/glass_container.dart';
 import 'package:wendy_weather/component/text/common_text.dart';
-import 'package:wendy_weather/component/text_field/common_text_field.dart';
-
 class HelpAndSupportScreen extends StatelessWidget {
   const HelpAndSupportScreen({super.key});
 

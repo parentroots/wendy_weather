@@ -28,7 +28,9 @@ class ChangePasswordScreen extends StatelessWidget {
        body: CommonBackground(child: Column(
          children: [
 
-         GlassAppBar(title: 'Change Password'),
+         GlassAppBar(
+           showAction: false,
+             title: 'Change Password'),
 
 
          SizedBox(height: 70.h,),

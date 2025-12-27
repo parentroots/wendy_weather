@@ -34,7 +34,12 @@ class WendyScreen extends StatelessWidget {
                     children: [
                       SizedBox(height: 14.h),
 
-                      Image.asset(AppImages.videoImage),
+                      InkWell(
+                        onTap: (){
+
+                          Get.toNamed(AppRoutes.subscriptionScreen);
+                        },
+                          child: Image.asset(AppImages.videoImage)),
                       SizedBox(height: 16.h),
 
                       CommonText(

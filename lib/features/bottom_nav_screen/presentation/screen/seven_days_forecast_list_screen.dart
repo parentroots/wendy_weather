@@ -40,7 +40,8 @@ class _SevenDaysForecastListScreenState
           children: [
             /// Glass App Bar
             GlassAppBar(
-              title: "7 Days Forecast",
+              showAction: false,
+              title: "Daily Forecast",
               showBack: true,
               onBackTap: () => Get.back(),
               onActionTap: () {},
@@ -78,7 +79,7 @@ class _SevenDaysForecastListScreenState
                         ),
                       ),
 
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 10.h),
 
                       /// -------- Content Change Area --------
                       IndexedStack(
@@ -284,7 +285,7 @@ class _SevenDaysForecastListScreenState
       child: GlassContainer(
         width: 100.w,
         containerBorderRadius: 30.r,
-        blurRadius: isSelected ? 0.30 : 0.0,
+        blurRadius: isSelected ? 0.30 : 0.02,
         borderRadius: isSelected?0.0:0.00,
         child: Center(
           child: CommonText(

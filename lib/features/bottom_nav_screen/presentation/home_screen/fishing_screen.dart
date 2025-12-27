@@ -25,6 +25,7 @@ class _FishingScreenState extends State<FishingScreen> {
         children: [
           GlassAppBar(
             title: "Fishing",
+            showAction: false,
             showBack: true,
             onBackTap: (){
               Get.back();

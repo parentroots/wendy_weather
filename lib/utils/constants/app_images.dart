@@ -23,6 +23,7 @@ class AppImages {
   static const String fishingBanner= "assets/images/fising.png";
   static const String locationImage= "assets/images/locationImage.png";
   static const String radarImage= "assets/images/radarImage.png";
+  static const String appLogo= "assets/images/appLogo.png";
 
 
 

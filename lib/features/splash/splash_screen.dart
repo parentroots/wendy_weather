@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wendy_weather/component/background_widget/common_background.dart';
 import 'package:wendy_weather/utils/extensions/extension.dart';
 import '../../../../config/route/app_routes.dart';
@@ -36,7 +37,10 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(AppImages.cloudy)
+            SizedBox(
+              height: 139.h,
+                width: 150.w,
+                child: Image.asset(AppImages.appLogo))
 
           ]),
     )));

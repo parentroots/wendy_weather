@@ -35,9 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
               showBack: false,
               title: 'WENDY WEATHER AI',
               onTapAction: () {
-
                 Get.toNamed(AppRoutes.setting);
-
               },
             ),
 
@@ -46,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     CommonText(
                       text: 'Dhaka 30/52, Bangladesh',
                       fontSize: 12.sp,
@@ -129,8 +127,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 12.h),
 
                     SizedBox(
-                      height: 130.h,
+                      height: 150.h,
                       child: ListView.separated(
+                        padding: EdgeInsets.zero,
                         scrollDirection: Axis.horizontal,
                         itemCount: 12,
                         separatorBuilder: (_, __) => SizedBox(width: 12.w),
@@ -154,12 +153,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w500,
                         ),
                         InkWell(
-                          onTap: (){
-
+                          onTap: () {
                             Get.toNamed(AppRoutes.sevenDaysForecastListScreen);
                           },
                           child: CommonText(
-
                             text: 'See All',
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
@@ -170,44 +167,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     SizedBox(height: 12.h),
 
-                    /// Weekly List
-                    ListView.separated(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 3,
-                      separatorBuilder: (_, __) => SizedBox(height: 12.h),
-                      itemBuilder: (_, __) => WeeklyForeCastItem(
-                        onTap: (){
-                          Get.toNamed(AppRoutes.viewForeCastScreen);
-                        },
+                    /// Weekly Forecast List (No extra gap now)
+                    Column(
+                      children: List.generate(
+                        3,
+                            (index) => Padding(
+                          padding: EdgeInsets.only(bottom: index != 2 ? 12.h : 0),
+                          child: WeeklyForeCastItem(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.viewForeCastScreen);
+                            },
+                          ),
+                        ),
                       ),
                     ),
 
+                    SizedBox(height: 12.h),
 
-                    /*
-
-
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-                    Here is the very big problem i faced
-
-
-                    GAP  today recommendation
-
-
-
-                    */
-
-                    /// TODAY RECOMMENDATION (NO EXTRA GAP NOW)
+                    /// TODAY RECOMMENDATION
                     CommonText(
                       text: AppString.todayRecommendation,
                       fontSize: 16.sp,
@@ -217,24 +194,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(height: 12.h),
 
                     /// Recommendation List
+                    ///
                     SizedBox(
                       height: 150.h,
                       child: ListView.separated(
+                        padding: EdgeInsets.zero,
                         scrollDirection: Axis.horizontal,
                         itemCount: 12,
                         separatorBuilder: (_, __) => SizedBox(width: 14.w),
                         itemBuilder: (_, __) => Column(
                           children: [
                             SizedBox(
-                                height:99.h,
-                                width: 110.w,
-                                child: InkWell(
-                                  onTap: (){
-
-                                    Get.toNamed(AppRoutes.fishingScreen);
-                                  },
-
-                                    child: Image.asset(AppImages.placeImage))),
+                              height: 99.h,
+                              width: 110.w,
+                              child: InkWell(
+                                onTap: () {
+                                  Get.toNamed(AppRoutes.fishingScreen);
+                                },
+                                child: Image.asset(AppImages.placeImage),
+                              ),
+                            ),
                             SizedBox(height: 10.h),
                             CommonText(
                               text: 'Hiking',
@@ -246,7 +225,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    SizedBox(height: 23.h),
+
+
+                    /// Other State Weather
 
                     CommonText(
                       text: AppString.otherStateWeather,
@@ -254,11 +235,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.w500,
                     ),
 
-                    SizedBox(height: 12.h),
+
 
                     StateWeatherWidget(),
 
-                    SizedBox(height: 100.h),
+                    SizedBox(height: 12.h),
                   ],
                 ),
               ),
