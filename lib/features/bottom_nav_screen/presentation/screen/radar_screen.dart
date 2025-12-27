@@ -34,7 +34,7 @@ class RadarScreen extends StatelessWidget {
                 rightPadding: 10.w,
                 bottomPadding: 10.h,
                 topPadding: 10.h,
-                height: 43.h,
+                height: 50.h,
                   width: double.maxFinite, child: Row(
                 children: [
                   
@@ -42,7 +42,7 @@ class RadarScreen extends StatelessWidget {
 
                   SizedBox(width: 5.w,),
                   
-                  CommonText(text: 'see forecast for home location',fontSize: 12.sp,fontWeight: FontWeight.w500,)
+                  CommonText(text: 'See Forecast for home location',fontSize: 16.sp,fontWeight: FontWeight.w500,)
 
                 ],
               ))

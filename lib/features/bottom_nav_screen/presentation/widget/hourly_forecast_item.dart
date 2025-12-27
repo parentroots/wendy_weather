@@ -18,7 +18,7 @@ class HourlyForecastItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassContainer(
       blurRadius: 0.20,
-      width: 95.w,
+      width: 120.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

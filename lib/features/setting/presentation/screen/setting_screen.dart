@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wendy_weather/component/background_widget/common_background.dart';
 import 'package:wendy_weather/component/glass_button/glass_button.dart';
+import 'package:wendy_weather/component/glass_container/glass_container.dart';
 import 'package:wendy_weather/utils/constants/app_icons.dart';
 import '../../../../../../config/route/app_routes.dart';
 import '../../../../../../utils/extensions/extension.dart';
@@ -176,72 +177,125 @@ class SettingScreen extends StatelessWidget {
       barrierDismissible: false,
       Dialog(
         backgroundColor: Colors.transparent,
-        child: WillPopScope(
-          onWillPop: () async => false,
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-            ),
+        child: GlassContainer(
+          width: 320,
+          height: 400.h,
+          blurRadius: 0.25,
+          borderRadius: 24,
+          child: Padding(
+            padding: const EdgeInsets.all(20),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
 
-                /// Title
-                Text(
-                  "Log out",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                /// ICON
+                Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white.withOpacity(0.15),
+                  ),
+                  child: const Icon(
+                    Icons.logout_rounded,
+                    color: Colors.white,
+                    size: 28,
                   ),
                 ),
 
-                const SizedBox(height: 12),
+                const SizedBox(height: 16),
 
-                /// Message
-                Text(
-                  "Are you sure you want to logout?",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 14),
-                ),
-
-                const SizedBox(height: 20),
-
-                Divider(
-                  color: Colors.grey.shade300,
-                  thickness: 1,
+                /// TITLE
+                const Text(
+                  "Log out",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
 
                 const SizedBox(height: 10),
 
-                /// Buttons
+                /// MESSAGE
+                Text(
+                  "Are you sure you want to logout?",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.8),
+                    fontSize: 14,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+
+                /// DIVIDER
+                Divider(
+                  color: Colors.white.withOpacity(0.2),
+                  thickness: 1,
+                ),
+
+                /// BUTTONS
                 Row(
                   children: [
 
-                    /// Cancel Button
+                    /// CANCEL
                     Expanded(
-                      child: TextButton(
-                        onPressed: () {
-                          Get.back(); // close dialog
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.back();
                         },
-                        child: Text(
-                          "Cancel",
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Colors.white.withOpacity(0.12),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Cancel",
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
 
-                    /// Logout Button
-                    ///
-                    ///
+                    const SizedBox(width: 12),
 
+                    /// LOGOUT
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.back();
 
-
+                          /// TODO: logout logic
+                          /// authController.logout();
+                          /// Get.offAllNamed(AppRoutes.login);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Colors.white.withOpacity(0.12),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Logout",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -251,6 +305,7 @@ class SettingScreen extends StatelessWidget {
       ),
     );
   }
+
 
 
 

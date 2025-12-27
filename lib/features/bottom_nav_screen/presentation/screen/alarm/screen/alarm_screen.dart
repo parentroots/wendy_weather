@@ -20,7 +20,8 @@ class AlarmScreen extends StatefulWidget {
 }
 
 class _AlarmScreenState extends State<AlarmScreen> {
-  bool isOn = false;
+  // List to track each alarm's on/off state individually
+  List<bool> alarmStates = List.generate(5, (index) => false);
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +34,10 @@ class _AlarmScreenState extends State<AlarmScreen> {
               showBack: false,
               onBackTap: () => Get.back(),
               onActionTap: () {
-
                 showAddAlarmDialog();
               },
               actionIcon: Icons.add,
             ),
-
-
-
 
             Expanded(
               child: Padding(
@@ -50,7 +47,7 @@ class _AlarmScreenState extends State<AlarmScreen> {
                   separatorBuilder: (context, index) => SizedBox(height: 12.h),
                   itemBuilder: (context, index) {
                     return GlassContainer(
-                      onTap:(){
+                      onTap: () {
                         showAlarmEditDialog();
                       },
                       blurRadius: 0.30,
@@ -75,16 +72,18 @@ class _AlarmScreenState extends State<AlarmScreen> {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                        color: isOn ? Colors.white : Colors.grey,
+                                        color: alarmStates[index]
+                                            ? Colors.white
+                                            : Colors.grey,
                                         width: 1.5,
                                       ),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Switch(
-                                      value: isOn,
+                                      value: alarmStates[index],
                                       onChanged: (bool value) {
                                         setState(() {
-                                          isOn = value;
+                                          alarmStates[index] = value;
                                         });
                                       },
                                       activeColor: Colors.white,
@@ -116,10 +115,7 @@ class _AlarmScreenState extends State<AlarmScreen> {
                               ],
                             ),
 
-
-                            SizedBox(height: 30.h,)
-
-
+                            SizedBox(height: 30.h),
                           ],
                         ),
                       ),
@@ -134,7 +130,6 @@ class _AlarmScreenState extends State<AlarmScreen> {
     );
   }
 }
-
 
 // Edit Alarm show dialog
 void showAlarmEditDialog() {

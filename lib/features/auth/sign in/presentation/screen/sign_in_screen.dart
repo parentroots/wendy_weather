@@ -30,164 +30,166 @@ class SignInScreen extends StatelessWidget {
       builder: (controller) {
         return Scaffold(
           body: CommonBackground(
-            child: Column(
-              children: [
-                CommonAppBar(title: 'Welcome wendy\n Weather Ai'),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 50.h),
-            
-                      GlassContainer(
-                        blurRadius: 0.18,
-                        height: 580.h,
-                        width: double.maxFinite,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 16.h,
-                          ),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                CommonText(
-                                  text: AppString.login,
-                                  fontSize: 26,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                                        
-                                SizedBox(height: 17.h),
-                                        
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    CommonText(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFFFFFFFF),
-                                      text: AppString.emailAddress,
-                                    ),
-                                    SizedBox(height: 6.h),
-                                    CommonTextField(
-                                      hintText: AppString.enterYourEmailAddress,
-                                    ),
-                                        
-                                    SizedBox(height: 12.h),
-                                        
-                                    CommonText(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFFFFFFFF),
-                                      text: AppString.password,
-                                    ),
-                                    SizedBox(height: 6.h),
-                                    CommonTextField(
-                                      hintText: AppString.enterYouPassword,
-                                      isPassword: controller.isShowPassword,
-                                      suffixIcon: IconButton(
-                                        onPressed: () {
-                                          controller.onTapPasswordToggle();
-                                        },
-                                        icon: Icon(
-                                          controller.isShowPassword
-                                              ? Icons.visibility
-                                              : Icons.visibility_off,
-                                          color: AppColors.white,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                        
-                                SizedBox(height: 11.h),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    InkWell(
-                                      onTap: (){
-                                        Get.toNamed(AppRoutes.forgotPassword);
-                                      },
-                                      child: CommonText(
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w500,
-                                        text: AppString.forgotPassword,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                        
-                                SizedBox(height: 32.h),
-                                        
-                                GlassButton(
-                                  text: AppString.login,
-                                  onTap: () {
-
-
-                                    Get.offAllNamed(AppRoutes.mainBottomNavScreen);
-
-                                  },
-                                ),
-                                        
-                                SizedBox(height: 30.h),
-                                        
-                                OrDivider(),
-                                        
-                                SizedBox(height: 20.h),
-                                        
-                                SocialAuthButtons(
-                                  leftIcon: AppImages.google,
-                                  onLeftTap: (){
-                                        
-                                    debugPrint('Login With Google❤️❤️❤️😊😁😁😁😁😁');
-                                  },
-                                  rightIcon: AppImages.apple,
-                                  onRightTap: (){
-                                    debugPrint('Login With Apple❤️❤️❤️😊😁😁😁😁😁');
-                                  },
-                                ),
-                                        
-                                SizedBox(height: 40.h,),
-                                        
-                                        
-                                RichText(
-                                  text: TextSpan(
-                                    text: "Don’t have an account? ",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w400
-                                    ),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  CommonAppBar(title: 'Welcome wendy\n Weather Ai'),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 50.h),
+              
+                        GlassContainer(
+                          blurRadius: 0.18,
+                          height: 660.h,
+                          width: double.maxFinite,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 16.h,
+                            ),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  CommonText(
+                                    text: AppString.login,
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                          
+                                  SizedBox(height: 17.h),
+                                          
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      TextSpan(
-                                        text: "Sign up",
-                                        style: TextStyle(
-                                          fontSize: 18.sp,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500,
-                                          decoration: TextDecoration.underline,
-                                        ),
-                                        recognizer: TapGestureRecognizer()
-                                          ..onTap = () {
-
-                                            Get.toNamed(AppRoutes.signUp);
+                                      CommonText(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xFFFFFFFF),
+                                        text: AppString.emailAddress,
+                                      ),
+                                      SizedBox(height: 6.h),
+                                      CommonTextField(
+                                        hintText: AppString.enterYourEmailAddress,
+                                      ),
+                                          
+                                      SizedBox(height: 12.h),
+                                          
+                                      CommonText(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xFFFFFFFF),
+                                        text: AppString.password,
+                                      ),
+                                      SizedBox(height: 6.h),
+                                      CommonTextField(
+                                        hintText: AppString.enterYouPassword,
+                                        isPassword: controller.isShowPassword,
+                                        suffixIcon: IconButton(
+                                          onPressed: () {
+                                            controller.onTapPasswordToggle();
                                           },
+                                          icon: Icon(
+                                            controller.isShowPassword
+                                                ? Icons.visibility
+                                                : Icons.visibility_off,
+                                            color: AppColors.white,
+                                          ),
+                                        ),
                                       ),
                                     ],
                                   ),
-                                )
-                                        
-                                        
-                                        
-                              ],
+                                          
+                                  SizedBox(height: 11.h),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      InkWell(
+                                        onTap: (){
+                                          Get.toNamed(AppRoutes.forgotPassword);
+                                        },
+                                        child: CommonText(
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w500,
+                                          text: AppString.forgotPassword,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                          
+                                  SizedBox(height: 32.h),
+                                          
+                                  GlassButton(
+                                    text: AppString.login,
+                                    onTap: () {
+              
+              
+                                      Get.offAllNamed(AppRoutes.mainBottomNavScreen);
+              
+                                    },
+                                  ),
+                                          
+                                  SizedBox(height: 30.h),
+                                          
+                                  OrDivider(),
+                                          
+                                  SizedBox(height: 20.h),
+                                          
+                                  SocialAuthButtons(
+                                    leftIcon: AppImages.google,
+                                    onLeftTap: (){
+                                          
+                                      debugPrint('Login With Google❤️❤️❤️😊😁😁😁😁😁');
+                                    },
+                                    rightIcon: AppImages.apple,
+                                    onRightTap: (){
+                                      debugPrint('Login With Apple❤️❤️❤️😊😁😁😁😁😁');
+                                    },
+                                  ),
+                                          
+                                  SizedBox(height: 40.h,),
+                                          
+                                          
+                                  RichText(
+                                    text: TextSpan(
+                                      text: "Don’t have an account? ",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w400
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: "Sign up",
+                                          style: TextStyle(
+                                            fontSize: 18.sp,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500,
+                                            decoration: TextDecoration.underline,
+                                          ),
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+              
+                                              Get.toNamed(AppRoutes.signUp);
+                                            },
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                          
+                                          
+                                          
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         );

@@ -25,107 +25,109 @@ class ChangePasswordScreen extends StatelessWidget {
      return Scaffold(
 
 
-       body: CommonBackground(child: Column(
-         children: [
-
-         GlassAppBar(
-           showAction: false,
-             title: 'Change Password'),
-
-
-         SizedBox(height: 70.h,),
-
-         Padding(
-           padding:  EdgeInsets.symmetric(horizontal: 20.w),
-           child: GlassContainer(
-
-             width: double.maxFinite,
-             child: Column(
-             crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-
-                 SizedBox(height: 20.h,),
-                 
-                 Row(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   children: [
-                     Column(
-                       children: [
-                         CommonText(text: 'Change Password',fontSize: 24.sp,),
-
-                         SizedBox(height: 4.h,),
-
-                         CommonText(
-                           maxLines: 3,
-                           textAlign: TextAlign.center,
-                           text: 'Your new password must be different \n from previous ones',fontSize: 16.sp,),
-                       ],
-                     ),
-                   ],
-                 ),
-
-                  SizedBox(height: 24.h,),
-
-                  CommonText(text: AppString.currentPassword, bottom: 8),
-                 CommonTextField(
-                   controller: controller.currentPasswordController,
-                   hintText: AppString.enterOldPassword,
-                   validator: OtherHelper.passwordValidator,
-                   isPassword: true,
-                 ),
-
-                 /// New Password section
-                 const CommonText(
-                   text: AppString.newPassword,
-                   bottom: 8,
-                   top: 16,
-                 ),
-                 CommonTextField(
-                   controller: controller.newPasswordController,
-                   hintText: AppString.enterNewPassword,
-                   validator: OtherHelper.passwordValidator,
-                   isPassword: true,
-
-                 ),
-
-                 /// confirm Password section
-                 const CommonText(
-                   text: AppString.confirmNewPassword,
-                   bottom: 8,
-                   top: 16,
-                 ),
-                 CommonTextField(
-                   controller: controller.confirmPasswordController,
-                   hintText: AppString.confirmNewPassword,
-                   validator:
-                       (value) => OtherHelper.confirmPasswordValidator(
-                     value,
-                     controller.newPasswordController,
+       body: CommonBackground(child: SingleChildScrollView(
+         child: Column(
+           children: [
+         
+           GlassAppBar(
+             showAction: false,
+               title: 'Change Password'),
+         
+         
+           SizedBox(height: 70.h,),
+         
+           Padding(
+             padding:  EdgeInsets.symmetric(horizontal: 20.w),
+             child: GlassContainer(
+         
+               width: double.maxFinite,
+               child: Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+         
+                   SizedBox(height: 20.h,),
+                   
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Column(
+                         children: [
+                           CommonText(text: 'Change Password',fontSize: 24.sp,),
+         
+                           SizedBox(height: 4.h,),
+         
+                           CommonText(
+                             maxLines: 3,
+                             textAlign: TextAlign.center,
+                             text: 'Your new password must be different \n from previous ones',fontSize: 16.sp,),
+                         ],
+                       ),
+                     ],
                    ),
-                   isPassword: true,
-                 ),
-
-
-
-                 SizedBox(height: 30.h,),
-
-                 GlassButton(
-                   text: 'Update',
-                   onTap: (){
-                     debugPrint('❤️❤️❤️❤️❤️❤️❤️❤️');
-                   }//controller.changePasswordRepo,
-                 ),
-
-
-
-
-               ],
+         
+                    SizedBox(height: 24.h,),
+         
+                    CommonText(text: AppString.currentPassword, bottom: 8),
+                   CommonTextField(
+                     controller: controller.currentPasswordController,
+                     hintText: AppString.enterOldPassword,
+                     validator: OtherHelper.passwordValidator,
+                     isPassword: true,
+                   ),
+         
+                   /// New Password section
+                   const CommonText(
+                     text: AppString.newPassword,
+                     bottom: 8,
+                     top: 16,
+                   ),
+                   CommonTextField(
+                     controller: controller.newPasswordController,
+                     hintText: AppString.enterNewPassword,
+                     validator: OtherHelper.passwordValidator,
+                     isPassword: true,
+         
+                   ),
+         
+                   /// confirm Password section
+                   const CommonText(
+                     text: AppString.confirmNewPassword,
+                     bottom: 8,
+                     top: 16,
+                   ),
+                   CommonTextField(
+                     controller: controller.confirmPasswordController,
+                     hintText: AppString.confirmNewPassword,
+                     validator:
+                         (value) => OtherHelper.confirmPasswordValidator(
+                       value,
+                       controller.newPasswordController,
+                     ),
+                     isPassword: true,
+                   ),
+         
+         
+         
+                   SizedBox(height: 30.h,),
+         
+                   GlassButton(
+                     text: 'Update',
+                     onTap: (){
+                       debugPrint('❤️❤️❤️❤️❤️❤️❤️❤️');
+                     }//controller.changePasswordRepo,
+                   ),
+         
+         
+         
+         
+                 ],
+               ),
              ),
-           ),
-         )
-
-
-       ],)),
+           )
+         
+         
+         ],),
+       )),
 
      );
    });

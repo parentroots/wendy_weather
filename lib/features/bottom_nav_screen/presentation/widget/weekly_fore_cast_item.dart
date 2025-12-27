@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:wendy_weather/component/glass_container/glass_container.dart';
 import 'package:wendy_weather/component/text/common_text.dart';
+import 'package:wendy_weather/features/bottom_nav_screen/presentation/controller/home_controller.dart';
 import 'package:wendy_weather/utils/constants/app_images.dart';
 
 class WeeklyForeCastItem extends StatelessWidget {
@@ -10,6 +12,8 @@ class WeeklyForeCastItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  return GetBuilder<HomeController>(builder: (controller){
+
     return InkWell(
       onTap: onTap,
       child: GlassContainer(
@@ -29,7 +33,7 @@ class WeeklyForeCastItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CommonText(
-                      text: 'Monday',fontSize: 16,fontWeight: FontWeight.w500,textAlign: TextAlign.start,),
+                      text: 'Monday',fontSize: 20.sp,fontWeight: FontWeight.w500,textAlign: TextAlign.start,),
                     SizedBox(height: 6.h,),
                     CommonText(
 
@@ -98,5 +102,6 @@ class WeeklyForeCastItem extends StatelessWidget {
         ),
       ),
     );
+  });
   }
 }
