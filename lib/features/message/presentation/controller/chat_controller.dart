@@ -63,6 +63,9 @@ class ChatController extends GetxController {
       Utils.errorSnackBar(response.statusCode.toString(), response.message);
       status = Status.error;
       update();
+
+
+      
     }
   }
 
