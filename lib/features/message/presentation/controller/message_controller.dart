@@ -37,6 +37,8 @@ class MessageController extends GetxController {
   MessageModel messageModel = MessageModel.fromJson({});
 
   Future<void> getMessageRepo() async {
+
+    
     return;
     if (page == 1) {
       messages.clear();
