@@ -10,9 +10,11 @@
 
 //   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+
 //   User get user => _auth.currentUser!;
 
 //   Future<bool> signup(String email, String pass) async {
+
 //     try {
 //       _auth.setLanguageCode("en");
 //       UserCredential user = await _auth.createUserWithEmailAndPassword(
@@ -31,12 +33,15 @@
 
 //       return true;
 //     } catch (e, log) {
+
 //       Get.snackbar("Error", e.toString());
+
 
 //       appLog(e.toString(), source: log.toString());
 
 //       return false;
 //     }
+
 //   }
 
 //   Future<bool> signIn(String email, String pass) async {
@@ -67,9 +72,13 @@
 //     }
 //   }
 
+
+
 //   Future<bool> isSignIn() async {
 //     return _auth.currentUser != null;
 //   }
+
+
 
 //   Future<void> isCheckSignIn() async {
 //     if (await isSignIn()) {
