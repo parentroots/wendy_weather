@@ -37,6 +37,7 @@ class EditProfile extends StatelessWidget {
               key: controller.formKey,
               child: Column(
                 children: [
+                  
                   /// User Profile image here
                   Stack(
                     children: [
