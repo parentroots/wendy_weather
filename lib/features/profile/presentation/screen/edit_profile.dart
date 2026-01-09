@@ -15,6 +15,7 @@ class EditProfile extends StatelessWidget {
   const EditProfile({super.key});
 
   @override
+  
   Widget build(BuildContext context) {
     return GetBuilder<ProfileController>(
       builder: (controller) {
