@@ -34,13 +34,11 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(body: CommonBackground(child: Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 139.h,
-                width: 150.w,
-                child: Image.asset(AppImages.appLogo))
+            Image.asset(AppImages.splashImage)
+            
 
           ]),
     )));

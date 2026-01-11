@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:wendy_weather/component/background_widget/common_background.dart';
+import 'package:wendy_weather/component/app_container/app_cotainer.dart';
+
 import 'package:wendy_weather/component/glass_button/glass_button.dart';
 import 'package:wendy_weather/component/glass_container/glass_container.dart';
+import 'package:wendy_weather/component/inju_button/ijamam.dart';
 import 'package:wendy_weather/component/text/common_text.dart';
 import '../../../../../config/route/app_routes.dart';
-import '../../../../../utils/extensions/extension.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../../utils/constants/app_images.dart';
 import '../../../../../utils/constants/app_string.dart';
-import '../../../component/button/common_button.dart';
-import '../../../component/image/common_image.dart';
+
 import '../../../utils/constants/app_colors.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -45,38 +47,43 @@ class OnboardingScreen extends StatelessWidget {
 
                 SizedBox(height: 32.h),
 
+
+
                 GlassContainer(
-                 leftPadding: 10,
-                  rightPadding: 10,
-                  bottomPadding: 10,
-                  topPadding: 10,
-                  width: 384,
+                  roundedBorder: 0.50,
+                  leftPadding: 12.w,
+                  topPadding: 10.h,
+                  bottomPadding: 10.h,
+                  rightPadding: 12.w,
+                  containerBorderRadius: 12.r,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CommonText(
                         textAlign: TextAlign.center,
                         maxLines: 2,
                         text: AppString.yourPersonalAiPowered,
-                        fontSize: 14.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
-                        color: AppColors.white,
+                        color:Color(0xffE6E6E6),
                       ),
 
-                      SizedBox(height: 5.h),
+                      SizedBox(height: 10.h),
 
                       CommonText(
                         textAlign: TextAlign.center,
                         maxLines: 3,
                         text: AppString.wendyDeliversHyperLocalForecasts,
-                        fontSize: 12.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
-                        color: AppColors.white,
+                        color: Color(0xFFFFFFFF),
                       ),
                     ],
                   ),
                 ),
 
-                SizedBox(height: 227.h),
+                SizedBox(height: 40.h,),
+
 
                 GlassButton(
                   fontSize: 18,
@@ -87,6 +94,11 @@ class OnboardingScreen extends StatelessWidget {
                     debugPrint('Glass Button Clicked');
                   },
                 ),
+
+
+
+
+                
               ],
             ),
           ),

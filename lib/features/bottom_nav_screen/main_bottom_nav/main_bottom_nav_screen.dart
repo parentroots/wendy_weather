@@ -40,8 +40,6 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
       bottomNavigationBar: GlassContainer(
         height: 76.h,
         width: double.infinity,
-        borderRadius: 0.15,
-        blurRadius: 0.20,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Row(

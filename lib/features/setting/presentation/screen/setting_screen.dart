@@ -180,8 +180,6 @@ class SettingScreen extends StatelessWidget {
         child: GlassContainer(
           width: 320,
           height: 400.h,
-          blurRadius: 0.25,
-          borderRadius: 24,
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
@@ -275,7 +273,7 @@ class SettingScreen extends StatelessWidget {
 
                           /// TODO: logout logic
                           /// authController.logout();
-                          /// Get.offAllNamed(AppRoutes.login);
+                           Get.offAllNamed(AppRoutes.signIn);
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 14),

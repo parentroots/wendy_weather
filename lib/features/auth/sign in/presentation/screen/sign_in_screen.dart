@@ -41,7 +41,8 @@ class SignInScreen extends StatelessWidget {
                         SizedBox(height: 50.h),
               
                         GlassContainer(
-                          blurRadius: 0.18,
+                          containerBorderRadius: 12.r,
+                          middleShadow: 0.90,
                           height: 660.h,
                           width: double.maxFinite,
                           child: Padding(

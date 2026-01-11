@@ -1,37 +1,32 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:wendy_weather/component/text/common_text.dart';
 
-class GlassButton extends StatelessWidget {
+import '../../utils/constants/app_colors.dart';
+import '../../utils/constants/app_string.dart';
+
+class PerfectGlassyButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
-  final double width;
-  final double height;
-  final double borderRadius;
-  final double fontSize;
-  final Color fontColor;
 
-  const GlassButton({
+  const PerfectGlassyButton({
     super.key,
     required this.text,
     required this.onTap,
-    this.width = double.infinity,
-    this.height = 56,
-    this.borderRadius = 40,
-    this.fontSize = 18,
-    this.fontColor = Colors.white,
   });
 
   @override
   Widget build(BuildContext context) {
+    const double buttonHeight = 60;
+    const double borderRadiusValue = 30;
+
     return Material(
       color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(borderRadius),
+        borderRadius: BorderRadius.circular(borderRadiusValue),
         child: Container(
-          width: width,
-          height: height,
+          height: buttonHeight,
+          width: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
@@ -41,12 +36,13 @@ class GlassButton extends StatelessWidget {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
             ),
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius: BorderRadius.circular(borderRadiusValue),
             boxShadow: [
               BoxShadow(
                 color: Colors.white,
+                blurRadius: 0.1,
                 spreadRadius: 0.1,
-                offset:Offset(1, 1),
+                offset: const Offset(2, 2),
               ),
             ],
             border: Border.all(
@@ -56,8 +52,6 @@ class GlassButton extends StatelessWidget {
           ),
           child: Center(
             child: CommonText(
-              fontSize: fontSize,
-              color: fontColor,
               text: text,
             ),
           ),

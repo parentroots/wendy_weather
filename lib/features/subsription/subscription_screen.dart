@@ -52,7 +52,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                   topPadding: 6,
                   bottomPadding: 6,
                   containerBorderRadius: 30,
-                  borderRadius: 0.2,
+
                   width: double.infinity,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -261,8 +261,6 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
       child: GlassContainer(
         width: 100.w,
         containerBorderRadius: 30.r,
-        blurRadius: isSelected ? 0.30 : 0.15,
-        borderRadius: isSelected ? 0.0 : 0.0,
         child: Center(
           child: CommonText(
             text: title,

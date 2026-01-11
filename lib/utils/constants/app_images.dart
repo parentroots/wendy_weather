@@ -10,7 +10,9 @@ class AppImages {
   static const String english= "assets/images/english.png";
   static const String spanish= "assets/images/spanish.png";
   static const String google= "assets/images/google.png";
-  static const String mainBg= "assets/images/main_bg.png";
+  static const String mainBg= "assets/images/app_bg.png";
+  static const String moodIcon= "assets/images/mood_icon.png";
+  static const String backImage= "assets/images/backImage.png";
   static const String radar= "assets/images/radar.png";
   static const String success= "assets/images/success_icon.png";
   static const String sun= "assets/images/sun.png";
@@ -24,8 +26,7 @@ class AppImages {
   static const String locationImage= "assets/images/locationImage.png";
   static const String radarImage= "assets/images/radarImage.png";
   static const String appLogo= "assets/images/appLogo.png";
-
-
+  static const String splashImage= "assets/images/splash_image.png";
 
 
 

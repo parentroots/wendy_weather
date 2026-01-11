@@ -78,9 +78,65 @@ class HomeController extends GetxController {
     },
   ];
 
-  List<Map<String, dynamic>> weeklyForecastList = [
-    {"day": "Sun", "temp": "32°", "icon": "sunny"},
-    {"day": "Mon", "temp": "30°", "icon": "cloudy"},
-    {"day": "Tue", "temp": "28°", "icon": "rain"},
+
+  List<Map<String, dynamic>> weeklyData = [
+    {
+      "day": "Friday",
+      "date": "January 26",
+      "temp": 70,
+      "condition": "Mostly Cloud",
+      "rain": 36,
+      "wind": 4
+    },
+    {
+      "day": "Saturday",
+      "date": "January 27",
+      "temp": 72,
+      "condition": "Sunny",
+      "rain": 10,
+      "wind": 6
+    },
+    {
+      "day": "Sunday",
+      "date": "January 28",
+      "temp": 68,
+      "condition": "Partly Cloudy",
+      "rain": 20,
+      "wind": 5
+    },
+    {
+      "day": "Monday",
+      "date": "January 29",
+      "temp": 66,
+      "condition": "Rainy",
+      "rain": 70,
+      "wind": 8
+    },
+    {
+      "day": "Tuesday",
+      "date": "January 30",
+      "temp": 69,
+      "condition": "Cloudy",
+      "rain": 40,
+      "wind": 4
+    },
+    {
+      "day": "Wednesday",
+      "date": "January 31",
+      "temp": 73,
+      "condition": "Sunny",
+      "rain": 5,
+      "wind": 3
+    },
+    {
+      "day": "Thursday",
+      "date": "February 1",
+      "temp": 71,
+      "condition": "Mostly Sunny",
+      "rain": 15,
+      "wind": 5
+    },
   ];
+
+
 }

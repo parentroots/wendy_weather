@@ -48,7 +48,6 @@ class CreatePassword extends StatelessWidget {
                       SizedBox(height: 53.h),
 
                       GlassContainer(
-                        blurRadius: 0.18,
                         leftPadding: 10.w,
                         rightPadding: 10.w,
                         topPadding: 16.h,
@@ -109,7 +108,6 @@ class CreatePassword extends StatelessWidget {
                                   Dialog(
                                     backgroundColor: AppColors.transparent,
                                     child: GlassContainer(
-                                      blurRadius: 0.20,
                                       height: 400.h,
                                       width: double.maxFinite,
                                       child: Column(

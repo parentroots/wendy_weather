@@ -24,16 +24,15 @@ class GlassAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return GlassContainer(
+      roundedBorder: 0.0,
+      middleShadow: 0.90,
       height: preferredSize.height,
       width: double.infinity,
-      blurRadius: 0.15,
-      borderRadius: 0,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Row(
           children: [
 
-            /// BACK
             SizedBox(
               width: 40.w,
               child: showBack
@@ -54,7 +53,7 @@ class GlassAppBar extends StatelessWidget implements PreferredSizeWidget {
                 title,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.white,
+                  color:Colors.white,
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w500,
                 ),

@@ -6,36 +6,32 @@ import '../../../../component/text/common_text.dart';
 import '../../../../utils/constants/app_images.dart';
 
 class HourlyForecastItem extends StatelessWidget {
-  const HourlyForecastItem({super.key, required this.icon, required this.time, required this.temperature});
-
+  const HourlyForecastItem({
+    super.key,
+    required this.icon,
+    required this.time,
+    required this.temperature,
+  });
 
   final String icon;
   final String time;
   final String temperature;
 
-
   @override
   Widget build(BuildContext context) {
     return GlassContainer(
-      blurRadius: 0.20,
+      middleShadow: 0.70,
+      containerBorderRadius: 4.r,
+
       width: 120.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            icon,
-            height: 32.h,
-          ),
+          Image.asset(icon, height: 32.h),
           SizedBox(height: 6.h),
-          CommonText(
-            text: "$time PM",
-            fontSize: 14.sp,
-          ),
+          CommonText(text: "$time PM", fontSize: 14.sp),
           SizedBox(height: 6.h),
-          CommonText(
-            text: "$temperature °",
-            fontSize: 24.sp,
-          ),
+          CommonText(text: "$temperature °", fontSize: 24.sp),
         ],
       ),
     );

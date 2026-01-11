@@ -52,6 +52,7 @@ class AppRoutes {
 
   ///----------------------------------=======================onboarding Screen===============---------
   static const String languageSelectOnboardingScreen = "/LanguageSelectOnboardingScreen";
+  static const String firstOnboardingScreen = "/FirstOnboardingScreen";
   static const String otpVerifyScreen = "/OtpVerifyScreen";
   static const String mainBottomNavScreen = "/MainBottomNavScreen";
   static const String sevenDaysForecastListScreen = "/SevenDaysForecastListScreen";
@@ -94,7 +95,9 @@ class AppRoutes {
 
     ///-------------------------------=====================onboarding scree========---------------------
 
+
     GetPage(name: languageSelectOnboardingScreen, page: () => const LanguageSelectOnboardingScreen()),
+    GetPage(name: firstOnboardingScreen, page: () => const SplashScreen()),
     GetPage(name: otpVerifyScreen, page: () => const OtpVerifyScreen()),
     GetPage(name: mainBottomNavScreen, page: () => const MainBottomNavScreen()),
     GetPage(name: viewForeCastScreen, page: () => const ViewForeCastScreen()),

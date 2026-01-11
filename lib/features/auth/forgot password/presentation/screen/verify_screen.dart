@@ -57,7 +57,6 @@ class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
                         SizedBox(height: 53.h),
 
                         GlassContainer(
-                          blurRadius: 0.18,
                           leftPadding: 10.w,
                           rightPadding: 10.w,
                           topPadding: 16.h,

@@ -64,8 +64,7 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
       rightPadding: 10,
       topPadding: 20,
       bottomPadding: 20,
-      borderRadius: 0,
-      blurRadius: 0.10,
+
       width: double.maxFinite,
       child: SingleChildScrollView(
         child: Column(
@@ -82,7 +81,6 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
             GlassContainer(
               leftPadding: 10,
               rightPadding: 10,
-              blurRadius: 0.10,
               height: 60.h,
               width: double.maxFinite,
               child: Row(
@@ -129,7 +127,6 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
             GlassContainer(
               leftPadding: 10,
               rightPadding: 10,
-              blurRadius: 0.10,
               height: 60.h,
               width: double.maxFinite,
               child: Row(

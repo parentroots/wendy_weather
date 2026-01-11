@@ -8,100 +8,125 @@ import 'package:wendy_weather/utils/constants/app_images.dart';
 
 class WeeklyForeCastItem extends StatelessWidget {
   final VoidCallback? onTap;
-  const WeeklyForeCastItem({super.key, this.onTap});
+  final String day;
+  final String date;
+  final int temp;
+  final String condition;
+  final int rain;
+  final int wind;
+
+  const WeeklyForeCastItem({
+    super.key,
+    this.onTap,
+    required this.day,
+    required this.date,
+    required this.temp,
+    required this.condition,
+    required this.rain,
+    required this.wind,
+  });
 
   @override
   Widget build(BuildContext context) {
-  return GetBuilder<HomeController>(builder: (controller){
+    return GetBuilder<HomeController>(
+      builder: (controller) {
+        return InkWell(
+          onTap: onTap,
+          child: GlassContainer(
+            middleShadow: 0.60,
+            roundedBorder: 0.40,
 
-    return InkWell(
-      onTap: onTap,
-      child: GlassContainer(
-        blurRadius: 0.20,
-        width: double.maxFinite,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
+            width: double.maxFinite,
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
-                ///===============================================
-
-                Column(
-
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CommonText(
-                      text: 'Monday',fontSize: 20.sp,fontWeight: FontWeight.w500,textAlign: TextAlign.start,),
-                    SizedBox(height: 6.h,),
-                    CommonText(
-
-                      text: 'December 24',fontSize: 12.sp,fontWeight: FontWeight.w400,),
-                  ],
-                ),
-
-
-                ///===============================================
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
+                    ///===============================================
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: 20.h,
-                          width: 20.h,
-                          child: Image.asset(AppImages.sun),
+                        CommonText(
+                          text: day,
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w500,
+                          textAlign: TextAlign.start,
                         ),
-                        CommonText(text: '76°F',fontSize: 16.sp,fontWeight: FontWeight.w500,),
-                      ],
-                    ),
-
-                    SizedBox(height: 6.h,),
-
-                    CommonText(text: 'Mostly Cloudy'),
-                  ],
-                ),
-                ///===============================================
-
-
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Row(
-                      children: [
-                        SizedBox(
-                          height: 20.h,
-                          width: 20.h,
-                          child: Image.asset(AppImages.windImage),
+                        SizedBox(height: 6.h),
+                        CommonText(
+                          text: date,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
                         ),
-                        CommonText(text: '3 Km / H'),
                       ],
                     ),
 
-                    SizedBox(height: 6.h,),
+                    ///===============================================
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
 
-                    Row(
                       children: [
-                        SizedBox(
-                            height: 20.h,
-                            width: 20.w,
-                            child: Image.asset(AppImages.cloudy)),
-                        CommonText(text: '36%'),
+                        Row(
+                          children: [
+                            SizedBox(
+                              height: 20.h,
+                              width: 20.h,
+                              child: Image.asset(AppImages.sun),
+                            ),
+                            CommonText(
+                              text: "${temp.toString()}°F",
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ],
+                        ),
+
+                        SizedBox(height: 6.h),
+
+                        CommonText(text: condition),
                       ],
                     ),
+
+                    ///===============================================
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                              height: 20.h,
+                              width: 20.h,
+                              child: Image.asset(AppImages.windImage),
+                            ),
+                            CommonText(text: "${wind.toString()} km/h"),
+
+                          ],
+                        ),
+
+                        SizedBox(height: 6.h),
+
+                        Row(
+                          children: [
+                            SizedBox(
+                              height: 20.h,
+                              width: 20.w,
+                              child: Image.asset(AppImages.cloudy),
+                            ),
+                            CommonText(text:"${rain.toString()} %"),
+                          ],
+                        ),
+                      ],
+                    ),
+
+                    ///===============================================
                   ],
                 ),
-
-                ///===============================================
-
-
               ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
-  });
   }
 }

@@ -41,7 +41,6 @@ class SignUpScreen extends StatelessWidget {
 
                         /// Glass Container (NO FIXED HEIGHT)
                         GlassContainer(
-                          blurRadius: 0.18,
                           width: double.infinity,
                           child: Padding(
                             padding: EdgeInsets.symmetric(

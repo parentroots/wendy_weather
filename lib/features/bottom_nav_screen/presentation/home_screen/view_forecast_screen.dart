@@ -6,6 +6,7 @@ import 'package:wendy_weather/component/background_widget/common_background.dart
 import 'package:wendy_weather/utils/constants/app_images.dart';
 
 import '../../../../component/app_bar/glass_app_bar.dart';
+import '../../../../component/image/common_image.dart';
 import '../widget/hourly_forecast_item.dart';
 
 class ViewForeCastScreen extends StatelessWidget {
@@ -23,6 +24,7 @@ class ViewForeCastScreen extends StatelessWidget {
             onBackTap: (){
               Get.back();
             },
+            showAction: false,
             onActionTap: () {
               print("Menu pressed");
             },
@@ -36,12 +38,26 @@ class ViewForeCastScreen extends StatelessWidget {
             child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
+                  SizedBox(height: 10.h,),
+
+                  Container(
+                    height: 217.h,
+                    width: double.infinity,
+                    decoration: BoxDecoration(),
+                    child: CommonImage(
+                      fill: BoxFit.fill,
+                      imageSrc: AppImages.videoImage,
+                    ),
+                  ),
+
                   /// Top Row: Temperature + Icon
 
 
                   SizedBox(height: 20.h,),
 
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         '68°F',

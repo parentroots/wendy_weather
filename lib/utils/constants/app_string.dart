@@ -44,6 +44,10 @@ class AppString {
   static const String resendCodeIn = "Resend code in";
   static const String minute = "minute";
   static const String verify = "Verify";
+  static const String sunScreenIsNotAPersonalityButItHelps = "Sunscreen Isn’t A Personality,But It Helps.";
+  static const String uvIndex = "uv index";
+  static const String introText = 'Meet Wendy — your new favorite weather personality, ready to bring you accurate forecasts with a personal touch';
+
   static const String dontWorryEnterYourEmailAddressAndWellSend =
       "Don’t worry! Enter your email address and \n we’ll send you a verify OTP to reset it.";
   static const String logIntoYourAccount = "Login to Your Account";
@@ -103,7 +107,7 @@ class AppString {
   static const String atWendyWeatherAiWeBelive = "At Wendy Weather AI, we believe that checking \nthe weather should be more than just numbers on \n a screen — it should be personal, interactive, and \n even a little fun. That’s why we created Wendy,\n  your animated, AI-powered weather companion \n who brings forecasts to life with voice, personality, \n and engaging visuals.";
   static const String weHaveSentSixDigitCodeToYourEmail =
       "we’ve sent a 6 digit code to your email \n please enter it below";
-  static const String spanish = "Spanish";
+  static const String spanish = "Espanol";
   static const String english = "English";
   static const String fishingWeatherCastWithConfidence = "Fishing Weather – Cast with Confidence";
   static const String otherStateWeather = "Other state weather";
@@ -126,14 +130,14 @@ class AppString {
   static const String startServer = "Please, start the Server";
   static const String unknownError = "Unknown Error";
   static const String seeForecastForHomeLocation = "see forecast for home location";
-  static const String wellComeWendyWeatherAi = "welcome Wendy\n Weather Ai";
+  static const String wellComeWendyWeatherAi = "Welcome Wendy\n Weather AI";
   static const String yourPersonalAiPowered =
       "Your personal AI-powered weather \n companion ☀️🌧️";
   static const String
   wendyIsHereToBringYOurFriendlyAndAccurateWeatherInformation =
       "Wendy is here to bring your friendly \n and accurate weather information";
   static const String wendyDeliversHyperLocalForecasts =
-      "Wendy delivers hyper-local forecasts, real-time \n alerts, and smart suggestions—so you’re always\n one step ahead of the weather";
+      "Wendy Delivers Hyper-Local Forecasts, Real-Time \n Alerts, And Smart Suggestions—So You’re Always\n One Step Ahead Of The Weather";
 
 
 

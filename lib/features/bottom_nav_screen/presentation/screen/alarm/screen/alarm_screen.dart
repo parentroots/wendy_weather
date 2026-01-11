@@ -50,7 +50,7 @@ class _AlarmScreenState extends State<AlarmScreen> {
                       onTap: () {
                         showAlarmEditDialog();
                       },
-                      blurRadius: 0.30,
+
                       width: double.maxFinite,
                       child: Padding(
                         padding: EdgeInsets.all(12.w),

@@ -38,7 +38,6 @@ class ManageLocationScreen extends StatelessWidget {
                       SizedBox(height: 10.h),
                   itemBuilder: (context, index) {
                     return GlassContainer(
-                      blurRadius: 0.20,
                       width: double.infinity,
                       child: Padding(
                         padding: EdgeInsets.all(10.w),
@@ -112,7 +111,6 @@ class ManageLocationScreen extends StatelessWidget {
       Dialog(
         backgroundColor: AppColors.transparent,
         child: GlassContainer(
-          blurRadius: 0.20,
           height: 280.h,
           width: double.maxFinite,
           child: Column(
