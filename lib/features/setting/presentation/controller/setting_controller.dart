@@ -9,6 +9,13 @@ class SettingController extends GetxController {
   /// Password controller here , use for delete account
   TextEditingController passwordController = TextEditingController();
 
+  bool isEnglishSelected = true;
+
+  void toggleLanguage() {
+    isEnglishSelected = !isEnglishSelected;
+    update();
+  }
+
   /// loading check , use delete account
   bool isLoading = false;
 

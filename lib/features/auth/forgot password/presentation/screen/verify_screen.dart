@@ -65,12 +65,12 @@ class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
                           child: Column(
                             children: [
                               CommonText(
-                                text: 'Verify OTP',
+                                text: AppString.verifyOneTimePaasCode,
                                 fontSize: 24.sp,
                                 fontWeight: FontWeight.w500,
                               ),
 
-                              SizedBox(height: 4.h),
+                              SizedBox(height: 6.h),
                               CommonText(
                                 maxLines: 2,
                                 text:
@@ -95,7 +95,6 @@ class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
                                   fontSize: 24.sp,
                                 ),
 
-
                                 keyboardType: TextInputType.number,
 
                                 animationType: AnimationType.fade,
@@ -106,7 +105,13 @@ class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
 
                                 pinTheme: PinTheme(
                                   shape: PinCodeFieldShape.box,
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(5),
+                                  borderWidth: 1,
+                                  errorBorderWidth: 1,
+                                  disabledBorderWidth: 1,
+                                  activeBorderWidth: 1,
+                                  inactiveBorderWidth: 1,
+                                  selectedBorderWidth: 1,
 
                                   fieldHeight: 60,
                                   fieldWidth: 56.w,
@@ -126,9 +131,9 @@ class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
                                   disabledColor:  AppColors.white,
                                 ),
 
-                                textStyle: const TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w600,
+                                textStyle: TextStyle(
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.w400,
                                   color: Colors.white,
                                 ),
 
@@ -141,9 +146,18 @@ class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
 
                               SizedBox(height: 12.h,),
 
-                              CommonText(text: 'Resend',fontSize: 16.sp,fontWeight: FontWeight.w500,),
+                              InkWell(
+                                onTap: (){
+
+
+                                },
+                                child: CommonText(
+                                  text: AppString.didNtGetItSummonANewCode,fontSize: 16.sp,fontWeight: FontWeight.w500,),
+                              ),
 
                               SizedBox(height: 30.h,),
+
+
 
 
 

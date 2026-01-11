@@ -32,46 +32,48 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor: Colors.transparent,
-      extendBody: true,
-      body: screens[currentIndex],
-
-      bottomNavigationBar: GlassContainer(
-        height: 76.h,
-        width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _bottomNavItem(
-                index: 0,
-                icon: AppIcons.home,
-                label: 'Home',
-              ),
-              _bottomNavItem(
-                index: 1,
-                icon: AppIcons.wendy,
-                label: 'Wendy',
-              ),
-              _bottomNavItem(
-                index: 2,
-                icon: AppIcons.radar,
-                label: 'Radar',
-              ),
-              _bottomNavItem(
-                index: 3,
-                icon: AppIcons.alarm,
-                label: 'Alarm',
-              ),
-            ],
+    return  SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        extendBody: true,
+        body: screens[currentIndex],
+      
+        bottomNavigationBar: GlassContainer(
+          height: 76.h,
+          width: double.infinity,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _bottomNavItem(
+                  index: 0,
+                  icon: AppIcons.home,
+                  label: 'Home',
+                ),
+                _bottomNavItem(
+                  index: 1,
+                  icon: AppIcons.wendy,
+                  label: 'Wendy',
+                ),
+                _bottomNavItem(
+                  index: 2,
+                  icon: AppIcons.radar,
+                  label: 'Radar',
+                ),
+                _bottomNavItem(
+                  index: 3,
+                  icon: AppIcons.alarm,
+                  label: 'Alarm',
+                ),
+              ],
+            ),
           ),
         ),
+      
+      
+      
       ),
-
-
-
     );
   }
 

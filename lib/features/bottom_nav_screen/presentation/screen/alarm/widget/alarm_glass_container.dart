@@ -34,8 +34,8 @@ class AlarmGlassContainer extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Colors.white.withOpacity(0.15),
-                Colors.white.withOpacity(0.05),
+                Colors.white.withOpacity(0.25),
+                Colors.white.withOpacity(0.10),
               ],
             ),
             borderRadius: borderRadius ?? BorderRadius.circular(20),

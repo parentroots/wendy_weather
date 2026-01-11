@@ -33,6 +33,7 @@ class _AlarmScreenState extends State<AlarmScreen> {
               title: "Wendy AI alarm",
               showBack: false,
               onBackTap: () => Get.back(),
+
               onActionTap: () {
                 showAddAlarmDialog();
               },
@@ -80,18 +81,18 @@ class _AlarmScreenState extends State<AlarmScreen> {
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Switch(
+                                      trackOutlineColor: MaterialStateProperty.all(Colors.transparent),
+                                      thumbColor: MaterialStateProperty.all(Colors.white),
+                                      activeTrackColor: Colors.transparent,
+                                      inactiveTrackColor: Colors.transparent,
                                       value: alarmStates[index],
                                       onChanged: (bool value) {
                                         setState(() {
                                           alarmStates[index] = value;
                                         });
                                       },
-                                      activeColor: Colors.white,
-                                      inactiveThumbColor: Colors.white,
-                                      activeTrackColor: Colors.transparent,
-                                      inactiveTrackColor: Colors.transparent,
-                                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                                     ),
+
                                   ),
                                 ),
                               ],

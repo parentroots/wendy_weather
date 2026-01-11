@@ -25,6 +25,16 @@ class HelpAndSupportScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: 10.h),
 
+                  Align(
+                    alignment: Alignment.center,
+                      child: CommonText(
+                        textAlign: TextAlign.center,
+                          maxLines: 2,
+                          text: 'Weather got you down? I’ve got you. Drop me a line and I’ll fetch the humans.')),
+
+
+                  SizedBox(height: 29.h,),
+
                   CommonText(
                     text: 'Subject',
                     fontSize: 14.sp,
@@ -33,7 +43,8 @@ class HelpAndSupportScreen extends StatelessWidget {
 
                   SizedBox(height: 6.h),
 
-                  GlassTextField(borderRadius: 1, hintText: 'Enter Subject'),
+                  GlassTextField(borderRadius: 4, hintText: 'Enter Subject'),
+
                   SizedBox(height: 20.h),
                   CommonText(
                     text: 'Message',
@@ -45,12 +56,20 @@ class HelpAndSupportScreen extends StatelessWidget {
 
                   GlassTextField(
                     maxLine: 5,
-                    borderRadius: 1,
-                    hintText: 'Enter Subject',
+                    borderRadius: 4,
+                    hintText: 'Enter Your Message',
                   ),
+                  SizedBox(height:11.h),
+
+                  CommonText(
+                    textAlign: TextAlign.start,
+                    maxLines: 5,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w400,
+                      text: 'Human support incoming. Not AI-generated. Not \n outsourced. Not boring. You’ll get a real person. A good\n One.'),
                   
                   
-                  SizedBox(height: 54.h,),
+                  SizedBox(height: 43.h,),
                   
                   
                   GlassButton(text: 'Send', onTap: (){
@@ -97,9 +116,26 @@ class GlassTextField extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: blurRadius, sigmaY: blurRadius),
         child: Container(
           decoration: BoxDecoration(
+
             color: Colors.white.withOpacity(0.15),
             borderRadius: BorderRadius.circular(borderRadius),
             border: Border.all(color: Colors.white.withOpacity(0.3)),
+
+
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white.withOpacity(0.20),
+                blurRadius: 0.5,
+
+
+              ),
+              BoxShadow(
+                color: Color(0xFF36698b).withOpacity(0.60),
+                spreadRadius: -3.0,
+                blurRadius: 20.0,
+              ),
+            ],
+
           ),
           child: TextField(
             maxLines: maxLine,

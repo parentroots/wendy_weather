@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../../config/api/api_end_point.dart';
 import '../../../../config/route/app_routes.dart';
@@ -9,6 +12,10 @@ import '../../../../utils/app_utils.dart';
 import '../../../../utils/helpers/other_helper.dart';
 
 class ProfileController extends GetxController {
+      String userName='MD EBRAHIM NAZMUL';
+      String userEmail='ebrahimnazmul20032@gmail.com';
+
+      String profileImageUrl='https://media.licdn.com/dms/image/v2/D5603AQHSageERRXY2w/profile-displayphoto-scale_400_400/B56Zuc4IqjJUAo-/0/1767863522190?e=1769644800&v=beta&t=bAcV9U3WeHgDwxvjCumZArt1s71Y1Vyp-XK0pUtziJI';
   /// Language List here
   List languages = ["English", "French", "Arabic"];
 
@@ -40,6 +47,22 @@ class ProfileController extends GetxController {
     update();
     Get.back();
   }
+
+
+
+      File? profileImage;
+
+      final ImagePicker _picker = ImagePicker();
+
+      Future<void> pickProfileImage() async {
+        final XFile? image =
+        await _picker.pickImage(source: ImageSource.camera);
+
+        if (image != null) {
+          profileImage = File(image.path);
+          update();
+        }
+      }
 
   /// update profile function here
   Future<void> editProfileRepo() async {

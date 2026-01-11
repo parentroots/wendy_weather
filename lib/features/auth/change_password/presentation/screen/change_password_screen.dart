@@ -10,6 +10,7 @@ import '../../../../../component/button/common_button.dart';
 import '../../../../../component/glass_button/glass_button.dart';
 import '../../../../../component/text/common_text.dart';
 import '../../../../../component/text_field/common_text_field.dart';
+import '../../../../../utils/constants/app_images.dart';
 import '../controller/change_password_controller.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_string.dart';
@@ -109,12 +110,47 @@ class ChangePasswordScreen extends StatelessWidget {
          
          
                    SizedBox(height: 30.h,),
-         
-                   GlassButton(
-                     text: 'Update',
-                     onTap: (){
-                       debugPrint('❤️❤️❤️❤️❤️❤️❤️❤️');
-                     }//controller.changePasswordRepo,
+
+                   GlassButton(text: AppString.updates, onTap: (){
+
+                     Get.dialog(
+                       Dialog(
+                         backgroundColor: AppColors.transparent,
+                         child: GlassContainer(
+                           height: 400.h,
+                           width: double.maxFinite,
+                           child: Column(
+                             children: [
+                               Image.asset(AppImages.success),
+                               CommonText(
+                                 text: AppString.allSet,
+                                 fontSize: 30.sp,
+                                 fontWeight: FontWeight.w500,
+                               ),
+                               SizedBox(height: 4.h,),
+                               CommonText(
+                                 maxLines: 2,
+                                 textAlign: TextAlign.center,
+                                 text: AppString.yourPasswordHasBennChanges,
+                                 fontSize: 14,
+                                 fontWeight: FontWeight.w400,
+                               ),
+                               SizedBox(height: 12.h,),
+
+                               CommonButton(
+                                   onTap: (){
+
+                                     Get.toNamed(AppRoutes.signIn);
+                                   },
+                                   titleText: 'Back To Login')
+                             ],
+                           ),
+                         ),
+                       ),
+                       barrierDismissible: true,
+                     );
+
+                   }
                    ),
          
          

@@ -4,6 +4,7 @@ import '../../features/auth/forgot password/presentation/screen/create_password.
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
 import '../../features/auth/forgot password/presentation/screen/verify_screen.dart';
 import '../../features/auth/sign in/presentation/screen/sign_in_screen.dart';
+import '../../features/auth/sign up/presentation/screen/category_choose_screen.dart';
 import '../../features/auth/sign up/presentation/screen/sign_up_screen.dart';
 import '../../features/auth/sign up/presentation/screen/verify_user.dart';
 import '../../features/bottom_nav_screen/main_bottom_nav/main_bottom_nav_screen.dart';
@@ -65,6 +66,7 @@ class AppRoutes {
   static const String aboutUsScreen = "/AboutUsScreen";
   static const String privacyPolicyScreen= "/PrivacyPolicyScreen";
   static const String subscriptionScreen= "/SubscriptionScreen";
+  static const String categoryChooseScreen= "/CategoryChooseScreen";
 
 
 
@@ -108,6 +110,7 @@ class AppRoutes {
     GetPage(name: helpAndSupportScreen, page: () => const HelpAndSupportScreen()),
     GetPage(name: privacyPolicyScreen, page: () => PrivacyPolicyScreen()),
     GetPage(name: subscriptionScreen, page: () => SubscriptionScreen()),
+    GetPage(name: categoryChooseScreen, page: () => CategoryChooseScreen()),
     GetPage(name: sevenDaysForecastListScreen, page: () => const SevenDaysForecastListScreen()),
 
 

@@ -27,6 +27,7 @@ init() async {
   dI.dependencies();
   SocketServices.connectToSocket();
 
+
   await Future.wait([
     LocalStorage.getAllPrefData(),
     NotificationService.initLocalNotification(),

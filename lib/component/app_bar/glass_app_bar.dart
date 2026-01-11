@@ -15,7 +15,7 @@ class GlassAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.title,
     this.showBack = true,
-    this.showAction = true, // 👈 NEW
+    this.showAction = true,
     this.onBackTap,
     this.onActionTap,
     this.actionIcon = Icons.menu,
@@ -47,7 +47,7 @@ class GlassAppBar extends StatelessWidget implements PreferredSizeWidget {
                   : const SizedBox(),
             ),
 
-            /// TITLE (ALWAYS CENTER)
+
             Expanded(
               child: Text(
                 title,
@@ -60,7 +60,8 @@ class GlassAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
 
-            /// ACTION (OPTIONAL)
+
+
             SizedBox(
               width: 40.w,
               child: showAction
@@ -90,6 +91,7 @@ class GlassAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
     );
   }
+
 
   @override
   Size get preferredSize => const Size.fromHeight(100);

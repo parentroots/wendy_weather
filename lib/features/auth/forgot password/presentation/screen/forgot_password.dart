@@ -60,7 +60,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                                   color: AppColors.white,
                                 ),
                       
-                                SizedBox(height: 4.h),
+                                SizedBox(height: 6.h),
+
                                 CommonText(
                                   textAlign: TextAlign.center,
                                   maxLines: 2,
@@ -76,8 +77,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     CommonText(
-                                      text: 'Email address',
-                                      fontSize: 14,
+                                      text: AppString.emailAddress,
+                                      fontSize: 16.sp,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ],
@@ -92,8 +93,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                                 SizedBox(height: 40.h),
 
                                 GlassButton(
-                                  height: 48.h,
-                                    text: 'Verify', onTap: (){
+                                  height: 52.h,
+                                    text: AppString.sendCode, onTap: (){
                                   Get.toNamed(AppRoutes.otpVerifyScreen);
 
                                 })

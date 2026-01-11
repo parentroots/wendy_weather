@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:wendy_weather/config/route/app_routes.dart';
 
 import '../../../../../component/app_bar/common_app_bar.dart';
 import '../../../../../component/background_widget/common_background.dart';
@@ -154,6 +155,8 @@ class SignUpScreen extends StatelessWidget {
                                 GlassButton(
                                   text: AppString.signUp,
                                   onTap: () {
+
+                                    Get.toNamed(AppRoutes.categoryChooseScreen);
                                     debugPrint(
                                         'Sign up clicked');
                                   },

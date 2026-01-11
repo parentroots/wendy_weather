@@ -19,10 +19,40 @@ class SignUpController extends GetxController {
 
 
 
+
   final TextEditingController fullNameTEController=TextEditingController();
   final TextEditingController emailAddressTEController=TextEditingController();
   final TextEditingController passwordTEController=TextEditingController();
   final TextEditingController confirmPasswordTEController=TextEditingController();
+
+
+
+  final Set<String> selectedItems = {};
+
+  void toggleSelection(String item) {
+    if (selectedItems.contains(item)) {
+      selectedItems.remove(item);
+    } else {
+      selectedItems.add(item);
+    }
+    update(); // Update UI
+  }
+
+  bool isSelected(String item) {
+    return selectedItems.contains(item);
+  }
+
+  List<String> getSelectedItems() {
+    return selectedItems.toList();
+  }
+
+  void clearSelection() {
+    selectedItems.clear();
+    update();
+  }
+
+
+
 
   bool passwordIsShow=false;
   bool confirmPasswordIsShow=false;

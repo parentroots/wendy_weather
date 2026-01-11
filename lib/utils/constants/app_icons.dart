@@ -19,4 +19,5 @@ class AppIcons {
   static const String privacy= "assets/icons/privacy.svg";
   static const String world= "assets/icons/world.svg";
   static const String package= "assets/icons/package.svg";
+  static const String person= "assets/icons/person.svg";
 }

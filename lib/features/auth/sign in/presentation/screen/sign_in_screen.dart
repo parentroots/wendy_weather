@@ -33,13 +33,13 @@ class SignInScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  CommonAppBar(title: 'Welcome wendy\n Weather Ai'),
+                  CommonAppBar(title: AppString.unlockYourForecast),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: Column(
                       children: [
                         SizedBox(height: 50.h),
-              
+
                         GlassContainer(
                           containerBorderRadius: 12.r,
                           middleShadow: 0.90,
@@ -58,27 +58,29 @@ class SignInScreen extends StatelessWidget {
                                     fontSize: 26,
                                     fontWeight: FontWeight.w500,
                                   ),
-                                          
+
                                   SizedBox(height: 17.h),
-                                          
+
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       CommonText(
-                                        fontSize: 14,
+                                        fontSize: 16.sp,
                                         fontWeight: FontWeight.w500,
                                         color: Color(0xFFFFFFFF),
                                         text: AppString.emailAddress,
                                       ),
                                       SizedBox(height: 6.h),
                                       CommonTextField(
-                                        hintText: AppString.enterYourEmailAddress,
+                                        hintText:
+                                            AppString.enterYourEmailAddress,
                                       ),
-                                          
-                                      SizedBox(height: 12.h),
-                                          
+
+                                      SizedBox(height: 11.h),
+
                                       CommonText(
-                                        fontSize: 14,
+                                        fontSize: 16.sp,
                                         fontWeight: FontWeight.w500,
                                         color: Color(0xFFFFFFFF),
                                         text: AppString.password,
@@ -101,13 +103,13 @@ class SignInScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                          
+
                                   SizedBox(height: 11.h),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       InkWell(
-                                        onTap: (){
+                                        onTap: () {
                                           Get.toNamed(AppRoutes.forgotPassword);
                                         },
                                         child: CommonText(
@@ -118,47 +120,48 @@ class SignInScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                          
+
                                   SizedBox(height: 32.h),
-                                          
+
                                   GlassButton(
                                     text: AppString.login,
                                     onTap: () {
-              
-              
-                                      Get.offAllNamed(AppRoutes.mainBottomNavScreen);
-              
+                                      Get.offAllNamed(
+                                        AppRoutes.mainBottomNavScreen,
+                                      );
                                     },
                                   ),
-                                          
+
                                   SizedBox(height: 30.h),
-                                          
+
                                   OrDivider(),
-                                          
+
                                   SizedBox(height: 20.h),
-                                          
+
                                   SocialAuthButtons(
                                     leftIcon: AppImages.google,
-                                    onLeftTap: (){
-                                          
-                                      debugPrint('Login With Google❤️❤️❤️😊😁😁😁😁😁');
+                                    onLeftTap: () {
+                                      debugPrint(
+                                        'Login With Google❤️❤️❤️😊😁😁😁😁😁',
+                                      );
                                     },
                                     rightIcon: AppImages.apple,
-                                    onRightTap: (){
-                                      debugPrint('Login With Apple❤️❤️❤️😊😁😁😁😁😁');
+                                    onRightTap: () {
+                                      debugPrint(
+                                        'Login With Apple❤️❤️❤️😊😁😁😁😁😁',
+                                      );
                                     },
                                   ),
-                                          
-                                  SizedBox(height: 40.h,),
-                                          
-                                          
+
+                                  SizedBox(height: 40.h),
+
                                   RichText(
                                     text: TextSpan(
                                       text: "Don’t have an account? ",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 16.sp,
-                                        fontWeight: FontWeight.w400
+                                        fontWeight: FontWeight.w400,
                                       ),
                                       children: [
                                         TextSpan(
@@ -167,20 +170,17 @@ class SignInScreen extends StatelessWidget {
                                             fontSize: 18.sp,
                                             color: Colors.white,
                                             fontWeight: FontWeight.w500,
-                                            decoration: TextDecoration.underline,
+                                            decoration:
+                                                TextDecoration.underline,
                                           ),
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () {
-              
                                               Get.toNamed(AppRoutes.signUp);
                                             },
                                         ),
                                       ],
                                     ),
-                                  )
-                                          
-                                          
-                                          
+                                  ),
                                 ],
                               ),
                             ),

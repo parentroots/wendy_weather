@@ -8,6 +8,7 @@ import 'package:wendy_weather/component/background_widget/common_background.dart
 import 'package:wendy_weather/component/text/common_text.dart';
 import 'package:wendy_weather/utils/constants/app_string.dart';
 
+import '../../../../component/glass_container/glass_container.dart';
 import '../../../../utils/constants/app_colors.dart';
 import '../widgets/custom_glass_container.dart';
 
@@ -28,8 +29,8 @@ class PrivacyPolicyScreen extends StatelessWidget {
 
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w),
-              child: CustomGlassContainer(
-                borderRadius: 0,
+              child: GlassContainer(
+
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

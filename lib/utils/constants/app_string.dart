@@ -18,6 +18,8 @@ class AppString {
   static const String tryAgain = "Try Again";
   static const String phoneNumber = "Phone Number";
   static const String test = "Test";
+  static const String whatKindsOfThingsAreYouInto = "What kinds of things are you into? I want to tailor your \n forecasts so they’re actually useful (and fun!)";
+  static const String wendyWantsToKnowYou = "Wendy Wants to Know You";
   static const String emailAddress = "Email address ";
   static const String changePassword = "Change Password";
   static const String currentPassword = "Old password";
@@ -43,23 +45,30 @@ class AppString {
   static const String resendCode = "Resend Code";
   static const String resendCodeIn = "Resend code in";
   static const String minute = "minute";
+  static const String unlockYourForecast = "Unlock your Forecast";
   static const String verify = "Verify";
   static const String sunScreenIsNotAPersonalityButItHelps = "Sunscreen Isn’t A Personality,But It Helps.";
   static const String uvIndex = "uv index";
   static const String introText = 'Meet Wendy — your new favorite weather personality, ready to bring you accurate forecasts with a personal touch';
 
   static const String dontWorryEnterYourEmailAddressAndWellSend =
-      "Don’t worry! Enter your email address and \n we’ll send you a verify OTP to reset it.";
+      "No worries. Enter your email and we’ll send \n you a code to reset your password.";
   static const String logIntoYourAccount = "Login to Your Account";
   static const String forgotThePassword = "Forgot the password";
   static const String signIn = "Sign in";
+  static const String sendCode = "Send Code";
   static const String doNotHaveAccount = "Don’t have an account";
   static const String signUp = "Sign up";
+  static const String verifyOneTimePaasCode = "Verify one time passcode";
   static const String alreadyHaveAccount = "Already have an account ? ";
   static const String fullName = "Full Name";
+  static const String didNtGetItSummonANewCode = 'Didn’t Get It? Summon a New Code.';
   static const String createYourAccount = "Create Your Account";
   static const String otpVerify = "OTP Verify";
   static const String inbox = "Inbox";
+  static const String updates = "Updates";
+  static const String yourPasswordHasBennChanges = "Your password’s been updated — clean slate, fresh skies";
+  static const String allSet = "All Set";
   static const String searchDoctor = "search a doctor";
   static const String activeNow = "Active Now";
   static const String messageHere = "message here";
@@ -109,11 +118,14 @@ class AppString {
       "we’ve sent a 6 digit code to your email \n please enter it below";
   static const String spanish = "Espanol";
   static const String english = "English";
+  static const String everyThingLookGood = "Everything look good? If not, I’ve got\n edit mode ready.";
+  static const String letsMakeSureIHaveGotYourName = "Let’s Make Sure I’ve Got Your Name \n Right For Shoutouts";
   static const String fishingWeatherCastWithConfidence = "Fishing Weather – Cast with Confidence";
   static const String otherStateWeather = "Other state weather";
   static const String todayRecommendation= "Today's Recommendation";
   static const String hourlyForecast = "Hourly Forecast";
   static const String getStarted = "Get Started >>";
+  static const String letsGetOnTheSameWavelength = "Let’s get on the same wavelength";
   static const String fishingDescription =
       "Whether you're heading to the riverbank, lake, or\n"
       "open sea, Wendy helps you plan the perfect fishing \n"
@@ -137,7 +149,9 @@ class AppString {
   wendyIsHereToBringYOurFriendlyAndAccurateWeatherInformation =
       "Wendy is here to bring your friendly \n and accurate weather information";
   static const String wendyDeliversHyperLocalForecasts =
-      "Wendy Delivers Hyper-Local Forecasts, Real-Time \n Alerts, And Smart Suggestions—So You’re Always\n One Step Ahead Of The Weather";
+      "Wendy Delivers Hyper-Local Forecasts, Real-\n Time Alerts, And Smart Suggestions—So You’re \n Always One Step Ahead Of The Weather";
+
+
 
 
 

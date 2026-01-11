@@ -101,8 +101,8 @@ class CommonTextField extends StatelessWidget {
           errorBorder: _buildBorder(),
           hintText: hintText,
           labelText: labelText,
-          hintStyle: GoogleFonts.roboto(fontSize: 14, color: hintTextColor),
-          labelStyle: GoogleFonts.roboto(fontSize: 14, color: labelTextColor),
+          hintStyle: GoogleFonts.poppins(fontSize: 14, color: hintTextColor),
+          labelStyle: GoogleFonts.poppins(fontSize: 14, color: labelTextColor),
           prefix: CommonText(
             text: prefixText ?? "",
             fontWeight: FontWeight.w400,
@@ -136,7 +136,6 @@ class CommonTextField extends StatelessWidget {
             obscureText.value
                 ? Icons.visibility_off_outlined
                 : Icons.visibility_outlined,
-            size: 20.sp,
             color: textColor,
           ),
         ),

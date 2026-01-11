@@ -15,28 +15,28 @@ class SettingItem extends StatelessWidget {
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
-    return GlassContainer(width: double.maxFinite, child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
+    return InkWell(
+      onTap: onTap,
+      child: GlassContainer(width: double.maxFinite, child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
 
 
-        Row(
-          children: [
+          Row(
+            children: [
 
-            SvgPicture.asset(leadingIcon),
-            SizedBox(width: 6.w,),
-            CommonText(text: title,fontSize: 14.sp,)
+              SvgPicture.asset(leadingIcon),
+              SizedBox(width: 6.w,),
+              CommonText(text: title,fontSize: 14.sp,)
 
-          ],
-        ),
+            ],
+          ),
 
-        InkWell(
-          onTap:onTap ,
-
-            child: Icon(Icons.arrow_forward_ios,color: Colors.white,)),
+          Icon(Icons.arrow_forward_ios,color: Colors.white,),
 
 
-      ],
-    ));
+        ],
+      )),
+    );
   }
 }

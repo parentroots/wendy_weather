@@ -30,15 +30,10 @@ class AboutUsScreen extends StatelessWidget {
 
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: CustomGlassContainer(
-              borderRadius: 0,
+            child: GlassContainer(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
-
-
-
 
                   CommonText(
                     color: AppColors.white,

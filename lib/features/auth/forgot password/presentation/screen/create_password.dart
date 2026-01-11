@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:wendy_weather/component/glass_button/glass_button.dart';
 import 'package:wendy_weather/config/route/app_routes.dart';
 import 'package:wendy_weather/features/auth/forgot%20password/presentation/screen/forgot_password.dart';
 import '../../../../../../../utils/extensions/extension.dart';
@@ -102,51 +103,46 @@ class CreatePassword extends StatelessWidget {
 
                             SizedBox(height: 40.h),
 
-                            CommonButton(
-                              onTap: (){
-                                Get.dialog(
-                                  Dialog(
-                                    backgroundColor: AppColors.transparent,
-                                    child: GlassContainer(
-                                      height: 400.h,
-                                      width: double.maxFinite,
-                                      child: Column(
-                                        children: [
-                                          Image.asset(AppImages.success),
-                                          CommonText(
-                                            text: 'Congratulations',
-                                            fontSize: 30.sp,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                          SizedBox(height: 4.h,),
-                                          CommonText(
-                                            maxLines: 2,
-                                            textAlign: TextAlign.center,
-                                            text: 'Your password has been changed\nsuccessfully',
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                          SizedBox(height: 12.h,),
-                                          
-                                          CommonButton(
+                            GlassButton(text: AppString.updates, onTap: (){
+
+                              Get.dialog(
+                                Dialog(
+                                  backgroundColor: AppColors.transparent,
+                                  child: GlassContainer(
+                                    height: 400.h,
+                                    width: double.maxFinite,
+                                    child: Column(
+                                      children: [
+                                        Image.asset(AppImages.success),
+                                        CommonText(
+                                          text: AppString.allSet,
+                                          fontSize: 30.sp,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                        SizedBox(height: 4.h,),
+                                        CommonText(
+                                          maxLines: 2,
+                                          textAlign: TextAlign.center,
+                                          text: AppString.yourPasswordHasBennChanges,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        SizedBox(height: 12.h,),
+
+                                        CommonButton(
                                             onTap: (){
 
                                               Get.toNamed(AppRoutes.signIn);
                                             },
-                                              titleText: 'Back To Login')
-                                        ],
-                                      ),
+                                            titleText: 'Back To Login')
+                                      ],
                                     ),
                                   ),
-                                  barrierDismissible: true, // এটা থাকলেই screen এর বাইরে ক্লিক করলে dismiss হবে
-                                );
+                                ),
+                                barrierDismissible: true,
+                              );
 
-
-
-
-                              },
-                              buttonHeight: 48.h,
-                              titleText: 'Update',
+                            }
                             ),
                           ],
                         ),

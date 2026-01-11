@@ -37,14 +37,15 @@ class SettingScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CommonText(
-                        text: 'WENDY WEATHER AI',
+                        text: 'Let’s Fine-Tune The Wendy Experience',
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w500,
                       ),
 
                       InkWell(
-                        onTap: ()=>Get.toNamed(AppRoutes.mainBottomNavScreen),
-                          child: SvgPicture.asset(AppIcons.cancel)),
+                        onTap: () => Get.toNamed(AppRoutes.mainBottomNavScreen),
+                        child: SvgPicture.asset(AppIcons.cancel),
+                      ),
                     ],
                   ),
 
@@ -72,9 +73,17 @@ class SettingScreen extends StatelessWidget {
 
                   SettingItem(
                     onTap: () {
+                      Get.toNamed(AppRoutes.profile);
+                    },
+                    title: 'Personal Information',
+                    leadingIcon: AppIcons.person,
+                  ),
+
+                  SizedBox(height: 12.h),
+
+                  SettingItem(
+                    onTap: () {
                       Get.toNamed(AppRoutes.manageLocationScreen);
-
-
                     },
                     title: 'Mange location',
                     leadingIcon: AppIcons.location,
@@ -84,7 +93,6 @@ class SettingScreen extends StatelessWidget {
 
                   SettingItem(
                     onTap: () {
-
                       Get.toNamed(AppRoutes.myPackageScreen);
                     },
                     title: 'My package',
@@ -105,9 +113,7 @@ class SettingScreen extends StatelessWidget {
 
                   SettingItem(
                     onTap: () {
-
                       Get.toNamed(AppRoutes.changeLanguageScreen);
-
                     },
                     title: 'Language',
                     leadingIcon: AppIcons.world,
@@ -117,9 +123,7 @@ class SettingScreen extends StatelessWidget {
 
                   SettingItem(
                     onTap: () {
-
                       Get.toNamed(AppRoutes.helpAndSupportScreen);
-
                     },
                     title: 'Help & support',
                     leadingIcon: AppIcons.help,
@@ -130,7 +134,6 @@ class SettingScreen extends StatelessWidget {
                   SettingItem(
                     onTap: () {
                       Get.toNamed(AppRoutes.aboutUsScreen);
-
                     },
                     title: 'About US',
                     leadingIcon: AppIcons.aboutUs,
@@ -140,7 +143,6 @@ class SettingScreen extends StatelessWidget {
 
                   SettingItem(
                     onTap: () {
-
                       Get.toNamed(AppRoutes.privacyPolicyScreen);
                     },
                     title: 'Privacy Policy',
@@ -151,10 +153,7 @@ class SettingScreen extends StatelessWidget {
 
                   SettingItem(
                     onTap: () {
-
                       logOutDialog();
-
-
                     },
                     title: 'Log out',
                     leadingIcon: AppIcons.logout,
@@ -170,8 +169,6 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-
-
   void logOutDialog() {
     Get.dialog(
       barrierDismissible: false,
@@ -185,7 +182,6 @@ class SettingScreen extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-
                 /// ICON
                 Container(
                   height: 60,
@@ -228,15 +224,11 @@ class SettingScreen extends StatelessWidget {
                 const SizedBox(height: 20),
 
                 /// DIVIDER
-                Divider(
-                  color: Colors.white.withOpacity(0.2),
-                  thickness: 1,
-                ),
+                Divider(color: Colors.white.withOpacity(0.2), thickness: 1),
 
                 /// BUTTONS
                 Row(
                   children: [
-
                     /// CANCEL
                     Expanded(
                       child: GestureDetector(
@@ -273,7 +265,7 @@ class SettingScreen extends StatelessWidget {
 
                           /// TODO: logout logic
                           /// authController.logout();
-                           Get.offAllNamed(AppRoutes.signIn);
+                          Get.offAllNamed(AppRoutes.signIn);
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 14),
@@ -303,8 +295,4 @@ class SettingScreen extends StatelessWidget {
       ),
     );
   }
-
-
-
-
 }
